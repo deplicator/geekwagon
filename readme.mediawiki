@@ -1,0 +1,5 @@
+__NOTOC__
+
+Files for my personl site, geekwagon.net. It's a typical vanity site to show off some of the things I do to a potential employeer perhaps. I've have a few complements on my useage of API's, so I've decided to create a repository and share.
+
+This is still an early version. I plan to make updates and some helpful notes as I get time.
