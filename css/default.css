@@ -1,6 +1,5 @@
 @import url(http://reset5.googlecode.com/hg/reset.min.css);
 @import url(codecademy-badges.css);
-@import url(jquery-ui.toggleSwitch.css);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800);
 
 html, body {
@@ -10,28 +9,45 @@ html, body {
 
 #wrapper {
     height: 100%;
-    min-width: 900px;
+    min-width: 1000px;
+    display: table;
+    width: 100%;
 }
 
 header {
     float: left;
-    width: 50%;
-    padding: 14px;
+    padding: 10px;
+    background: #E3E286;
+    width: 100%;
 }
 
 header h1 {
     color: #2F2F2F;
     font-family: 'Open Sans', sans-serif;
     font-size: 34px;
-    text-align: center;
+}
+
+a {
+    color: #2F2F2F;
+    text-decoration: none;
+}
+
+#glue {
+    height: 15px;
+    width: 100%;
+    background: #36356E;
+}
+
+#left {
+    width: 100%;
+    display:table-cell;
+    background: url(../images/yellowpadbg.png);
 }
 
 #whatup {
-    position: fixed;
+    position: absolute;
     top: 13px;
-    width: 55%;
-    text-align: right;
-    min-width: 610px;
+    right: 524px;
 }
 
 #whatup #whatupimg{
@@ -54,11 +70,11 @@ header h1 {
 #contact {
     position: absolute;
     top: 117px;
-    margin: 0 0 0 13px;
+    margin: 0 0 0 28px;
     text-align: right;
     color: #2F2F2F;
     font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 #contact a {
@@ -82,8 +98,9 @@ header h1 {
     overflow: auto;
     float: right;
     padding: 0 20px;
-    width: 40%;
+    width: 485px;
     box-shadow: inset 27px 0px 18px -23px #494E4A;
+    display:table-cell;
 }
 
 #apilog h2 {
@@ -104,7 +121,6 @@ header h1 {
     position: relative;
     box-shadow:  5px 5px 10px 0px #494E4A;
     
-	//position: absolute;
     -webkit-transition-property: right;
     -moz-transition-property:    right;
     -ms-transition-property:     right;
@@ -213,6 +229,11 @@ header h1 {
     border-right: 3px solid #bbb ;
 }
 
+.codecademy .filler ,
+.codecademy .datebox {
+    border-right: 3px solid #111 ;
+}
+
 .codecademy .icon {
     max-width: 64px;
     padding: 9px 0;
@@ -226,16 +247,12 @@ header h1 {
 
 #more {
     position: absolute;
-    top: 200px;
+    top: 183px;
     width: 430px;
     padding: 0 41px;
     z-index: 100;
-    border: 1px solid #494E4A;
-    border-radius: 5px;
     margin: 10px;
     padding: 5px;
-    box-shadow:  5px 5px 10px 0px #494E4A;
-    background: whitesmoke;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     
@@ -243,13 +260,14 @@ header h1 {
 
 #more div {
     float: left;
-    padding: 2px;
-    border: 1px solid #aaa;
+    padding: 4px;
     margin: 0 2px;
+    text-align: center;
 }
 
 #more img {
     height: 120px;
+    margin: 3px 0;
 }
 
 #more #moreheader {

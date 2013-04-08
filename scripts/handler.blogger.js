@@ -28,7 +28,7 @@ $.ajax({
 				img = '<img class="picture" src="' + find + '">';
 			}
 			
-			message = '<a href="' + response.items[i].url + '">' +
+			var message = '<a href="' + response.items[i].url + '">' +
 						  response.items[i].title + 
 					  '</a>';
 						
