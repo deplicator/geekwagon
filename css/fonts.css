@@ -1,0 +1,50 @@
+/*
+    Google WebFont's imports
+    
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import url(http://fonts.googleapis.com/css?family=Habibi);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+*/
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../fonts/OpenSans.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../fonts/OpenSans-Semibold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../fonts/OpenSans-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(../fonts/UbuntuMono-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Habibi';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Habibi'), local('Habibi-Regular'), url(../fonts/Habibi-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(../fonts/Roboto-Thin.woff) format('woff');
+}

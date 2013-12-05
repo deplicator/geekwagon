@@ -1,10 +1,17 @@
 <?php
 //Rename this file config.php and add your api keys.
 
-$BLOGGER_KEY = 'yours';
-$BLOGGER_ID = 'yours';
+$DB_PDO = 'mysql:host=localhost;dbname=geekwagon';
+$DB_USER = 'notroot';
+$DB_PASS = 'anawesoelongpassword';
 
-$FB_APPID_APIKEY = 'yours';
-$FB_APP_SECRET = 'yours';
+$BLOGGER_KEY = 'your_blogger_key';
+$BLOGGER_ID = 'your_blogger_id';
 
-$BTCGUILD_APIKEY = 'yours';
+$FB_APPID_APIKEY = 'facebookstuff';
+$FB_APP_SECRET = 'facebookstuff';
+
+$KA_CONSUMER_KEY = 'khanacademystuff';
+$KA_CONSUMER_SECRET = 'khanacademystuff';
+
+$BTCGUILD_APIKEY = 'someotherstuff';

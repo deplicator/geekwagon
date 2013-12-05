@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/ionicons.css" />
+    <script src="libs/jquery-1.10.2.min.js"></script>
+    <script src="libs/underscore-1.5.2.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1><a href="jamespryor.net">james pryor</a></h1>
+            <ul id="contact">
+                <li>
+                    <a class="icon-ios7-email-outline"
+                       title="Email is one of the best ways to contact me."
+                       href="mailto:james@geekwagon.net"></a>
+                </li>
+                <li>
+                    <a class="icon-social-facebook-outline"
+                       href="https://www.facebook.com/deplicator"></a>
+                </li>
+                <li>
+                    <a class="icon-social-github-outline"
+                       title="I don't always put Facebook before GitHub, but when I do it's because they're in alphabetical order."
+                       href="https://github.com/deplicator"></a>
+                </li>
+                <li>
+                    <a class="icon-social-googleplus-outline"
+                       href="https://plus.google.com/100479632575151546186"></a>
+                </li>
+                <li>
+                    <a class="icon-social-linkedin-outline"
+                       href="https://github.com/deplicator">
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <nav>
+            <ul>
+                <li class="menu-item selected" id="mi-summary">Summary</li>
+                <li class="menu-item" id="mi-activity">Activity</li>
+                <!--<li class="menu-item" id="mi-projects">Projects</li>-->
+                <li class="menu-item" <!--id="mi-blog"--><a href="http://blog.geekwagon.net">Blog</a></li>
+            </ul>
+        </nav>
+        
+        <div class="page" id="summary">
+            
+            <section id="latest-activity">
+                <h2><a href="#activity">Latest Activity</a><span class="more-info">Click for everything.</span></h2>
+                
+            </section>
+            
+            <section id="project-summaries">
+                <h2><!--<a href="#projects">Projects</a><span class="more-info">more details</span>-->Projects</h2>
+                <div class="project-summary" href="http://geekwagon.net/projects/comp2003/project/">
+                    <h3>PVAMU Computer Science Department</h3>
+                    <div>
+                        <img src="./images/project-csdepartment.png">
+                        <p>
+                            A school project to remake an existing website. Another student and I 
+                            took on the school's Computer Science Department site.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-summary" href="http://geekwagon.net/projects/xkcd1190">
+                    <h3>xkcd Time - at your own pace</h3>
+                    <div>
+                        <img src="http://imgs.xkcd.com/comics/time.png" height="143">
+                        <p>
+                            The most popular thing I've ever done on the Internet. This site gathers
+                            the frames from the xkcd comic Time and presents them in an easy to use 
+                            scroll wheel fashion.
+                        </p>
+                        <p>
+                            The ultimate complement was an email from xkcd's creator, Randal Monroe,
+                            letting me know he found this tool easier to navigate his comic over his
+                            own. When the official comic ended it links to this project.
+                        </p>
+                        <p>
+                            This was also the first work I've done with others. I started it, but
+                            through github others contributed--an all around exciting experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-summary" href="http://geekwagon.net/projects/eistreamer/">
+                    <h3>The Engines of Our Ingenuity Streamer</h3>
+                    <div>
+                        <img src="./images/eistreamerpic.png">
+                        <p>
+                            Looking back on this over a year later, I'm surprised it still works. It
+                            scrapes UH's Engine's website to present the transcript and audio for 
+                            each episode in an easier to use format.
+                        </p>
+                        <p>
+                            This project was done with the consent of the University of Houston and
+                            Dr. John Lienhard.
+                        </p>
+                    </div>
+                </div>
+                
+                
+            </section>
+
+        </div><!--summary-->
+        
+        <div class="page" id="activity">
+            <h2>All Activity</h2>
+            <table id="tehactivities">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>When</th>
+                        <th>What</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="page" id="why">
+            <h2>Why geekwagon.net?</h2>
+            <p>
+                Like many geeks that like to tinker there was a time in my life I <em>needed</em> a 
+                domain. Maybe I wanted a forum for some video game, I thought I'd get rich from web 
+                advertisements, or maybe I thought I'd make it as a web designer. Hard to say what 
+                was in my head at the time.
+            </p>
+            <p>
+                When I purchased this domain I was living in a travel trailer, an Airstream. It was
+                a neat way of life that I was able to pull off for about six years. I fondly 
+                refereed to my home as the geek wagon.
+            </p>
+            <p>
+                I've since remade it into a vanity/portfolio site, and set up jamespryor.net as a 
+                mirror. I continue to use it as a place to test new ideas. The source for this site
+                is available on <a href="https://github.com/deplicator/geekwagon">github</a>.
+            </p>
+        </div>
+        
+    </div><!--wrapper-->
+    
+    <footer>
+        <section><h2><a href="#why">&lt;geekwagon.net /&gt;</a><span class="more-info">why geekwagon?</span></h2></section>
+    </footer>
+    
+    <script src="scripts/main.js"></script>
+    <script type="text/html" id="summary-item">
+        <% if (activity.jsonObject !== null) { %>
+            <%
+                switch(activity.type) {
+                    case("github"):
+                        %><h3><%= activity.type.capitalize() %></h3>
+                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div><%
+                        switch(activity.jsonObject.type) {
+                            case("PushEvent"):
+                                %><div class="description">Commit to <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a></div><%
+                                break;
+                            case("CreateEvent"):
+                                %><div class="description">Created new repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a></div><%
+                                break;
+                            default:
+                                %><div class="description">Unaccounted for Github event.</div><%
+                                break;
+                        }
+                        break;
+                    case("blog"):
+                        %><h3>Blog Post</h3>
+                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
+                        <div class="description"><a href="<%= activity.jsonObject.link %>"><%= activity.jsonObject.title %></a></div>
+                        <%
+                        break;
+                    case("codecademy"):
+                        %><h3><%= activity.type.capitalize() %></h3>
+                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
+                        <div class="description"><a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a></div>
+                        <%
+                        break;
+                    default:
+                        %><h3><%= activity.type.capitalize() %></h3>
+                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
+                        <%
+                        break;
+                }
+            %>
+        <% } %>
+    </script>
+    
+    <script type="text/html" id="activity-item">
+        <% if (activity.jsonObject !== null) { %>
+        <tr>
+            <% 
+                switch(activity.type) {
+                    case("github"):
+                        switch(activity.jsonObject.type) {
+                            case("PushEvent"):
+                                %>
+                                <td><a class="icon-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                                <td>Made a commit to <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> repository on Github.<br>
+                                <em>Message: <%= activity.jsonObject.payload.commits[0].message %></em></td>
+                                <%
+                                break;
+                            case("CreateEvent"):
+                                %>
+                                <td><a class="icon-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                                <td>Created new repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
+                                <em>Description: <%= activity.jsonObject.payload.description %></em></td>
+                                <%
+                                break;
+                            default:
+                                %>
+                                <td><a class="icon-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                                <td>Unaccounted for Github event</td>
+                                <%
+                                break;
+                        }
+                        break;
+                    case("blog"):
+                        %>
+                        <td><a class="icon-social-rss" href="https://blog.geekwagon.net"></a></td>
+                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                        <td>New blog post titled: <a href="<%= activity.jsonObject.link %>"><%= activity.jsonObject.title %></a>.<br>
+                        <em>Comments: <%= activity.jsonObject.comments %></em></td>
+                        <%
+                        break;
+                    case("codecademy"):
+                        %>
+                        <td><img src="images/codecademy-logo.png" height="26" /></td>
+                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                        <td><img src="<%= activity.jsonObject.badge %>" height=32 alt="badge"/><p>Earned <a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a> on Codecademy.</p></td>
+                        <%
+                        break;
+                    default:
+                        %>
+                        <td></td>
+                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                        <td>Unaccounted for event</td>
+                        break;
+                        <%
+                }
+            %>
+        </tr>
+        <% } %>
+    </script>
+
+</body>
+</html>
