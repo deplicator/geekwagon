@@ -25,7 +25,7 @@ function DisplaySection() {
 
 function pullActivity(limit) {
     if (arguments.length == 0) {
-        limit = "recent";
+        limit = "all";
     }
     $.getJSON("scripts/getActivity.php?limit=" + limit, function() {
         //console.log("success");
@@ -72,15 +72,14 @@ $(document).ready(function() {
         $('.menu-item').removeClass('selected');
         $('#mi-' + hash.slice(1)).addClass('selected');
         
+        //Pull all activity when user scrolls down.
         if(window.location.hash == "#activity"){
-            var top = 0;
+            pullFlag = true;
             $(document).scroll(function() {
-                if(top < $(document).scrollTop()) {
-                    top = $(document).scrollTop();
-                }
-                if (!(top % 600)) {
-                    pullActivity(pullCount);
-                    pullCount += 30;
+                if($(document).scrollTop() > 600 && pullFlag) {
+                    pullFlag = false;
+                    pullActivity('all');
+                    
                 }
             });
         }
@@ -92,10 +91,10 @@ $(document).ready(function() {
         window.location.hash = $(this).attr('id').slice(3);
     })
 
-    //DisplaySection();
+    //Show first 30 events on Activity page.
     pullActivity(30);
-    pullCount = 60;
     
+    //Show latest events on summary page.
     $.getJSON("scripts/getActivity.php?limit=recent", function() {
         //console.log("success");
     }).done(function(activities) {

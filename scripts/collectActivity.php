@@ -14,24 +14,30 @@ try {
      * Uses the user api to collect 30 most recent public events.
      * This is also the example for future api data gathering.
      */
-    $info = file_get_contents('https://api.github.com/users/deplicator/events');
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL, "https://api.github.com/users/deplicator/events"); 
+    curl_setopt($ch, CURLOPT_USERAGENT, "deplicator"); 
+    $info = curl_exec($ch);
+    curl_close($ch);
+    
     $events = json_decode($info);
     $eventslen = count($events);
     for ($i = 0; $i < $eventslen; $i++) {
 
-        //Source's id, this is potentially problematic.
+        // Source's id, this is potentially problematic.
         $id = $events[$i]->id;
 
-        //Activity times stored in database in unix time format.
+        // Activity times stored in database in unix time format.
         $activityTime = date('U', strtotime($events[$i]->created_at));
 
-        //String to identify source of activity.
+        // String to identify source of activity.
         $type = "github";
 
-        //Original json string from source.
+        // Original json string from source.
         $raw = json_encode($events[$i], JSON_HEX_QUOT | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP);
 
-        //What I deemed useful.
+        // What I deemed useful.
         $jsonObject = json_encode(array("type"=>$events[$i]->type,
             "who"=>$events[$i]->actor->login,
             "wholink"=>"https://github.com/" . $events[$i]->actor->login,
@@ -77,7 +83,67 @@ try {
         $STH = $DBH->prepare($sql);
         $STH->execute();
     }
-}
-catch (PDOException $e) {
+    
+    /**
+     * Codecademy
+     */
+    $html = file_get_contents('http://www.codecademy.com/users/deplicator/achievements');
+    $doc = new DOMDocument();
+    libxml_use_internal_errors(true);
+    $doc->loadHTML($html);
+    libxml_use_internal_errors(false);
+    $xml = simplexml_import_dom($doc);
+    $achievements = $xml->xpath("//div[@class='achievement']"); 
+
+    $arr = Array();
+
+    foreach ($achievements as $achievement) {
+        error_reporting(0);
+        if(is_object($achievement->a->p->span)) {
+            //For achievements with links.
+            $name = trim((string)$achievement->a->p->span[0]);
+            $date = trim((string)$achievement->a->p->span[1]);
+            $badge = explode("(", (string)$achievement->a->div['style']);
+            $badge = "http://www.codecademy.com" . substr($badge[1], 0, -1);
+            $link = "http://www.codecademy.com" . (string)$achievement->a['href'];
+
+            $id = hexdec(hash("crc32", $achievement->a->p->span));
+            $id = $id * 12;
+            $activityTime = strtotime($date);
+            $type = "codecademy";
+            $jsonObject = json_encode(Array("name" => $name,
+                                            "date" => $activityTime,
+                                            "badge" => $badge,
+                                            "link" => $link), 
+                                            JSON_HEX_QUOT | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP);
+            
+        } else if(is_object($achievement->p->span)) {
+            //For achievements without links.
+            $name = trim((string)$achievement->p->span[0]);
+            $date = trim((string)$achievement->p->span[1]);
+            $badge = explode("(", (string)$achievement->div['style']);
+            $badge = "http://www.codecademy.com" . substr($badge[1], 0, -1);
+            
+            $id = hexdec(hash("crc32", $achievement->p->span));
+            $id = $id * 12;
+            $activityTime = strtotime($date);
+            $type = "codecademy";
+            $jsonObject = json_encode(Array("name" => $name,
+                                            "date" => $activityTime,
+                                            "badge" => $badge),
+                                            JSON_HEX_QUOT | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP);
+
+        }
+
+        //No raw column for codecademy.
+        $sql = "INSERT INTO
+                        activity (id, activityTime, type, jsonObject)
+                        values ($id, '$activityTime', '$type', '$jsonObject')";
+
+        $STH = $DBH->prepare($sql);
+        $STH->execute();
+    }
+
+} catch (PDOException $e) {
     echo $e->getMessage();
 }

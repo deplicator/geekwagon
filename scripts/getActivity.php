@@ -6,16 +6,23 @@ header('Content-type: application/json');
 include('../config.php');
 
 $recent = false;
+$all = false;
 if (isset($_REQUEST['limit'])) {
-    $limitub = intval($_REQUEST['limit'], 10);
     if ($_REQUEST['limit'] == "recent") {
         $recent = true;
+    } else if($_REQUEST['limit'] == "all") {
+        $all = true;
     }
+    $limitub = intval($_REQUEST['limit'], 10);
 } else {
     $limitub = 30;
 }
-if ($limitub < 30) { $limitub = 30; }
+
+if ($limitub < 30) {
+    $limitub = 30;
+}
 $limitlb = $limitub - 30;
+
 
 
 try {
@@ -32,6 +39,8 @@ try {
                       `activityTime` = (SELECT MAX(`activityTime`)
                                         FROM `activity`
                                         WHERE `type` = 'codecademy')";
+    } else if($all) {
+        $sql = "SELECT * from `activity` ORDER BY `activityTime` DESC LIMIT 30, 18446744073709551615";
     } else {
         $sql = "SELECT * from `activity` ORDER BY `activityTime` DESC LIMIT $limitlb, $limitub";
     }
