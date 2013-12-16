@@ -49,7 +49,6 @@
             
             <section id="latest-activity">
                 <h2><a href="#activity">Latest Activity</a><span class="more-info">Click for everything.</span></h2>
-                
             </section>
             
             <section id="project-summaries">
@@ -230,7 +229,7 @@
                         break;
                     case("codecademy"):
                         %>
-                        <td><img src="images/codecademy-logo.png" height="26" /></td>
+                        <td class="codecademy-logo"></td>
                         <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                         <td><img src="<%= activity.jsonObject.badge %>" height=32 alt="badge"/><p>Earned <a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a> on Codecademy.</p></td>
                         <%

@@ -280,8 +280,6 @@ margin: .5em 0 0 .5em;
 }
 
 
-
-
 /*** Activity Table ***/
 table {
     border: 1px solid #c50;
@@ -326,6 +324,20 @@ table tr:nth-child(even) {
     background: #CFCFCF;
 }
 
+.codecademy-logo {
+    background: url(../images/codecademy-logo.png) no-repeat;
+    background-size: auto 24px;
+    background-position: center;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.codecademy-logo:hover {
+    background: url(../images/codecademy-logo-hover.png) no-repeat;
+    background-size: auto 24px;
+    background-position: center; 
+}
+
 
 /** FOOTER **/
 footer {
@@ -347,9 +359,6 @@ footer h2 {
     float: right;
     font: normal normal 200 1.4em 'Roboto', sans-serif;
 }
-
-
-
 
 
 /* Single column for anything less than ~896px */
