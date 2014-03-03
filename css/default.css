@@ -273,10 +273,20 @@ section a:visited {
 
 .project-summary img {
     float: right;
-width: 200px;
-padding: .25em;
-border: 1px solid #CCC;
-margin: .5em 0 0 .5em;
+    width: 200px;
+    padding: .25em;
+    border: 1px solid #CCC;
+    margin: .5em 0 0 .5em;
+}
+
+.project-summary .tools {
+    background: #F7F7F8;
+    border: 1px solid #D8D7E6;
+    border-radius: 3px;
+    color: #8D81E0;
+    font-size: .75em;
+    margin: 0 -1px 0 0;
+    padding: 1px 4px;
 }
 
 

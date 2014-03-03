@@ -1,0 +1,9 @@
+<IfModule mod_expires.c>
+ExpiresActive On
+############################################
+## Add default Expires header
+## http://developer.yahoo.com/performance/rules.html#expires
+<FilesMatch "\.(html|css|js|woff|ttf|map|jpg|png)$">
+ ExpiresDefault "access plus 6 months"
+</FilesMatch>
+</IfModule>
