@@ -188,7 +188,6 @@ section {
 section h2 {
     background: #FEFEFE;
     color: #E18A07;
-    float: left;
     font: normal 400 1.5em 'Ubuntu Mono', monospace;
     margin: 1em 0 1em 0;
     text-align: left;
@@ -348,6 +347,31 @@ table tr:nth-child(even) {
     background-position: center; 
 }
 
+/** RESUME **/
+#resume .page-submenu {
+    font: normal 400 1em 'Ubuntu Mono', monospace;
+    padding: .5em;
+    text-align: right;
+}
+
+#resume h3 {
+    border-top: 1px solid #DDD;
+    margin: 1em 0 0 0;
+}
+
+#resume ul {
+    margin: 0 0 15px 0;
+}
+
+#resume p {
+    margin: -15px 0 0 0;
+}
+
+#resume strong {
+    float: right;
+    font-family: 'Ubuntu Mono', monospace;
+    
+}
 
 /** FOOTER **/
 footer {

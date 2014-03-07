@@ -122,6 +122,20 @@ $(document).ready(function() {
         window.location = $(this).attr('href');
     });
 
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        $.ajax({
+            url: 'resume/pryor-resume.md',
+            type: 'get',
+            success: function(text) {
+                marked(text, function (err, text) {
+                    if (err) throw err;
+                    $('#resume-content').html(text);
+                });
+            }
+        });
+    } else {
+        alert('The File APIs are not fully supported by your browser.');
+    }
 });
 
 

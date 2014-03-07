@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
     <title>James Pryor's Personal Site</title>
+    <meta name="description" content="Personal projects and other adventures of James.">
+    <meta name="google-site-verification" content="zbf_AZ2WITDTSvGVXDwBxbIwg0JVNmPrWCsIW6hWm9A">
     
-    <meta property="og:title" content="James Pryor's Personal Web Site" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://geekwagon.net/" />
-    <meta property="og:image" content="http://geekwagon.net/images/ogimg.jpg" />
-    <meta property="og:description" content="Personal projects and other adventures from James." />
+    <meta property="og:title" content="James Pryor's Personal Web Site">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://geekwagon.net/">
+    <meta property="og:image" content="http://geekwagon.net/images/ogimg.jpg">
+    <meta property="og:description" content="Personal projects and other adventures of James.">
     
-    <link rel="stylesheet" href="css/default.css" />
-    <link rel="stylesheet" href="css/ionicons.css" />
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/ionicons.css">
     <script src="libs/jquery-1.10.2.min.js"></script>
     <script src="libs/underscore-1.5.2.min.js"></script>
+    <script src="libs/marked.js"></script><!--https://github.com/chjj/marked/-->
     <script src="libs/analytics.js"></script>
 </head>
 <body>
@@ -31,12 +35,13 @@
                 </li>
                 <li>
                     <a class="icon-social-github-outline"
-                       title="I don't always put Facebook before GitHub, but when I do it's because they're in alphabetical order."
+                       title="I don't always put Facebook before GitHub, but when I do it's because 
+                              they're in alphabetical order."
                        href="https://github.com/deplicator"></a>
                 </li>
                 <li>
                     <a class="icon-social-googleplus-outline"
-                       href="https://plus.google.com/100479632575151546186"></a>
+                       href="https://plus.google.com/100479632575151546186?rel=author"></a>
                 </li>
                 <li>
                     <a class="icon-social-linkedin-outline"
@@ -50,14 +55,15 @@
                 <li class="menu-item selected" id="mi-summary">Summary</li>
                 <li class="menu-item" id="mi-activity">Activity</li>
                 <!--<li class="menu-item" id="mi-projects">Projects</li>-->
-                <li class="menu-item" <!--id="mi-blog"--><a href="http://blog.geekwagon.net">Blog</a></li>
+                <li class="menu-item" <!--id="mi-blog" --><a href="http://blog.geekwagon.net">Blog</a></li>
+                <li class="menu-item" id="mi-resume">R&eacute;sum&eacute;</li>
             </ul>
         </nav>
         
         <div class="page" id="summary">
             
             <section id="latest-activity">
-                <h2><a href="#activity">Latest Activity</a><span class="more-info">Click for everything.</span></h2>
+                <h2><a href="#activity">Latest Activity</a><!--<span class="more-info">Click for everything.</span>--></h2><!--change this to use of pseudo-elements-->
             </section>
             
             <section id="project-summaries">
@@ -141,7 +147,18 @@
                 <tbody>
                 </tbody>
             </table>
-        </div>
+        </div><!--activity-->
+        
+        <div class="page" id="blog">
+            
+        </div><!--blog-->
+        
+        <div class="page" id="resume">
+            <div class="page-submenu">
+                download: <a href="resume/pryor-resume.pdf">pdf</a> | <a href="resume/pryor-resume.md">markdown</a>
+            </div>
+            <section id="resume-content"></section>
+        </div><!--resume-->
         
         <div class="page" id="why">
             <h2>Why geekwagon.net?</h2>
