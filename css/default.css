@@ -1,5 +1,6 @@
 @import url(fonts.css);
 
+/** DEFAULTS **/
 body {
     overflow-y: scroll;
 }
@@ -14,17 +15,55 @@ html {
     padding: 0;
 }
 
+h2 {
+    color: #E18A07;
+    font: normal 400 1.5em 'Ubuntu Mono', monospace;
+    position: relative;
+    text-align: left;
+}
+
+h2 a:link,
+h2 a:active,
+h2 a:visited,
+h2 a:hover {
+    color: #E18A07;
+    text-decoration: none;
+}
+
+h2[descr]:hover::after {
+    background-color: rgba(75, 110, 219, 0.14);
+    border: 1px #AAA solid;
+    border-radius: .375em;
+    color: #585858;
+    content: attr(descr);
+    font-size: .55em;
+    left: 0;
+    top: -1.75em;
+    min-width: 200px;
+    padding: .25em;
+    position: absolute;
+    z-index: 1;
+}
+
 p {
     line-height: 1.25;
 }
 
 a:link,
-a:active,
-a:hover,
-a:visited {
-    color: inherit;
+a:link {
+    color: #5366F3;
     text-decoration: none;
 }
+
+a:hover {
+    color: #A5ADEB;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #868686
+}
+
 
 #wrap {
     background: #FEFEFE;
@@ -40,7 +79,7 @@ a:visited {
     width: 80vw;
 }
 
-/** HEADER **/
+/** HEADER and CONTACT**/
 header {
     background: #E18A07;
     background-image: linear-gradient(bottom, #D49F51 8%, #E18A07 54%);
@@ -63,6 +102,21 @@ header h1 {
     color: #FEFEFE;
     float: left;
     margin: 0 0 0 .25em;
+    
+}
+
+header h1 a:link,
+header h1 a:visited {
+    color: #F1F1F1;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+header h1 a:hover,
+header h1 a:active {
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: .1em .1em 3px #86400E;
 }
 
 #contact {
@@ -100,6 +154,7 @@ header h1 {
     margin: 0 5px 5px 0;
 }
 
+/** NAVIGATION **/
 nav {
     box-shadow: inset 0px -0.375em 0.375em -0.375em rgba(0, 0, 0, 0.5);
     border-bottom: 2px solid #C50;
@@ -139,7 +194,6 @@ nav li:hover {
     
 }
 
-
 nav .selected {
     background: #FEFEFE;
     box-shadow: 0.1875em -0.125em 0.375em -0.125em rgba(0, 0, 0, 0.5);
@@ -164,11 +218,8 @@ nav a:hover {
 
 
 /*** Pages ***/
-.page > h2 {
-    color: #E18A07;
-    font: normal 400 1.5em 'Ubuntu Mono', monospace;
-    margin: 2em 0 1em 1em;
-    text-align: left;
+.page {
+    padding: 1em 1em 4em 1em;
 }
 
 .page > p {
@@ -179,54 +230,9 @@ nav a:hover {
 /*** Sections ***/
 section {
     margin: 0 auto 26px;
-    padding: 0 2em;
     min-width: 180px;
     position: relative;
     margin: 0 0 85px 0;
-}
-
-section h2 {
-    background: #FEFEFE;
-    color: #E18A07;
-    font: normal 400 1.5em 'Ubuntu Mono', monospace;
-    margin: 1em 0 1em 0;
-    text-align: left;
-    position: relative;
-}
-
-section h2 a:link,
-section h2 a:active,
-section h2 a:visited,
-section h2 a:hover {
-    color: inherit!important;
-    text-decoration: none!important;
-}
-
-section h2 .more-info {
-    color: black;
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-size: .65em;
-    transition: all 0.4s ease;
-}
-
-.page a:link,
-section a:link {
-    color: #5366F3;
-    text-decoration: none;
-}
-
-.page a:hover,
-section a:hover {
-    color: #A5ADEB;
-    text-decoration: underline;
-}
-
-.page a:visited,
-section a:visited {
-    color: #868686
 }
 
 
@@ -378,20 +384,27 @@ footer {
     clear: both;
     color: #ECECEC;
     height: 50px;
-    margin: -79px auto 0;
+    margin: 0 auto;
     padding: 5px 0;
     min-width: 180px;
     width: 80vw;
 }
 
-footer section {
-    width: 75vw;
+footer h2 {
+    font: normal normal 200 1.2em 'Roboto', sans-serif;
+    float: right;
+    margin: 0 1em 0 0;
 }
 
-footer h2 {
-    color: #ccc;
-    float: right;
+footer h2 a:link,
+footer h2 a:hover,
+footer h2 a:active,
+footer h2 a:visited {
+    color: rgba(0, 0, 0, 0.25);
     font: normal normal 200 1.4em 'Roboto', sans-serif;
+    margin: 0 1em 0 0;
+    text-align: right;
+
 }
 
 

@@ -107,16 +107,6 @@ $(document).ready(function() {
     }).always(function() {
         //console.log("complete");
     });
-    
-    
-    $('section h2').hover(function() {
-        $(this).children('.more-info').css('margin-bottom', '1.25em');
-        $(this).children('.more-info').css('opacity', '1');
-    }, function() {
-        $(this).children('.more-info').css('margin-bottom', '0');
-        $(this).children('.more-info').css('opacity', '0');
-    });
-
 
     $('.project-summary').click(function() {
         window.location = $(this).attr('href');
@@ -124,7 +114,7 @@ $(document).ready(function() {
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
         $.ajax({
-            url: 'resume/pryor-resume.md',
+            url: 'resume/pryor-resume-extended.md',
             type: 'get',
             success: function(text) {
                 marked(text, function (err, text) {
