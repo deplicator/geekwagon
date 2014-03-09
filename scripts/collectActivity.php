@@ -7,7 +7,7 @@ header('Content-type: application/json; charset=utf-8');
 include('../config.php');
 
 try {
-    $DBH = new PDO($DB_PDO, $DB_USER, $DB_PASS);
+    $DBH = new PDO(DB_PDO, DB_USER, DB_PASS);
 
     /**
      * GitHub
@@ -49,7 +49,7 @@ try {
 
         $sql = "INSERT INTO
                     activity (id, activityTime, type, jsonObject, raw)
-                    values ($id, '$activityTime', '$type', '$jsonObject', '$raw')";
+                    values ('$id', '$activityTime', '$type', '$jsonObject', '$raw')";
         $STH = $DBH->prepare($sql);
         $STH->execute();
     }
@@ -58,8 +58,8 @@ try {
      * Blogger
      * Uses blogger api v3 to gather 20 most recent blog posts.
      */
-    $blog = file_get_contents('https://www.googleapis.com/blogger/v3/blogs/' . $BLOGGER_ID .
-                              '/posts?maxResults=20&key=' . $BLOGGER_KEY);
+    $blog = file_get_contents('https://www.googleapis.com/blogger/v3/blogs/' . BLOGGER_ID .
+                              '/posts?maxResults=20&key=' . BLOGGER_KEY);
     $data = json_decode($blog);
     $postlen = count($data->items);
     for ($i = 0; $i < $postlen; $i++) {
@@ -78,7 +78,7 @@ try {
 
         $sql = "INSERT INTO
                     activity (id, activityTime, type, jsonObject, raw)
-                    values ($id, '$activityTime', '$type', '$jsonObject', '$raw')";
+                    values ('$id', '$activityTime', '$type', '$jsonObject', '$raw')";
 
         $STH = $DBH->prepare($sql);
         $STH->execute();
@@ -138,10 +138,91 @@ try {
         //No raw column for codecademy.
         $sql = "INSERT INTO
                         activity (id, activityTime, type, jsonObject)
-                        values ($id, '$activityTime', '$type', '$jsonObject')";
+                        values ('$id', '$activityTime', '$type', '$jsonObject')";
 
         $STH = $DBH->prepare($sql);
         $STH->execute();
+    }
+
+    
+    /**
+     * Khan Academy Badges
+     * Makes use of simple oauth library. This only needs to authenticate for one user, so the token
+     * and secret were created manually then hard coded here. In theory they should not change. The
+     * Khan Academy API for badges will work without authentication, but will not return my badges
+     * even though my profile is public. :( 
+     */
+    // Create an authenticated badge url.
+    $oauth = new OAuthSimple();
+    $badgeUrl = $oauth->sign(Array('path' => 'http://www.khanacademy.org/api/v1/badges',
+                                   'signatures' => Array('consumer_key'  => KA_CONSUMER_KEY,
+                                                         'shared_secret' => KA_CONSUMER_SECRET,
+                                                         'access_token'  => KA_OAUTH_TOKEN,
+                                                         'access_secret' => KA_OAUTH_SECRET)));
+
+    // Get all badge api info!
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $badgeUrl['signed_url']);
+    $info = curl_exec($ch);
+    curl_close($ch);
+    
+    // Returns an array of objects representing every badge Khan Academy offers.
+    $events = json_decode($info);
+    $eventslen = count($events);
+    foreach($events as $event) {
+    
+        // If I have that badge there is an array inside the badge object with information about 
+        // each time the badge was acquired. This is what should go in the database.
+        if($event->is_owned == 1) {
+        
+            // Original json string from source.
+            $raw = json_encode($event, JSON_HEX_QUOT | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP);
+        
+            // Generic badge info.
+            $badgeURL = $event->absolute_url;
+            $badgeIcon = $event->icon_src;
+            $badgeName = $event->description;
+            $badgeDescription = $event->safe_extended_description;
+            
+            // Specific badge info.
+            foreach($event->user_badges as $badge) {
+            
+                // Hopefully a unique id for each badge earned (based on the hypothesis two badges 
+                // of the same name cannot be earned at the same time).
+                $id = hash('md5', $badge->date . $badge->badge_name);
+                
+                // Activity times stored in database in unix time format.
+                $activityTime = date('U', strtotime($badge->date));
+                
+                // Combine with name for specific badge.
+                $badgeContext = $badge->target_context_name;
+                if($badgeContext == '') {
+                    $badgeNomenclature = $badgeName;
+                } else {
+                    $badgeNomenclature = $badgeName . ' for '. $badgeContext;
+                }
+                
+                // String to identify source of activity.
+                $type = "khanacademy";
+
+                // What I deemed useful.
+                $jsonObject = json_encode(array(
+                    'when'          => $activityTime,
+                    'badgelink'     => $badgeURL,
+                    'icon'          => $badgeIcon,
+                    'name'          => $badgeNomenclature,
+                    'description'   => $badgeDescription
+                    ), JSON_HEX_QUOT | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP);
+
+                //print_r(array($id, $activityTime, $type, json_decode($jsonObject), $raw));
+                $sql = "INSERT INTO
+                            activity (id, activityTime, type, jsonObject, raw)
+                            values ('$id', '$activityTime', '$type', '$jsonObject', '$raw')";
+                $STH = $DBH->prepare($sql);
+                $STH->execute();
+            }
+        }
     }
 
 } catch (PDOException $e) {

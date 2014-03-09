@@ -218,6 +218,12 @@
                         <div class="description"><a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a></div>
                         <%
                         break;
+                    case("khanacademy"):
+                        %><h3>Khan Academy</h3>
+                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
+                        <div class="description"><a href="https://www.khanacademy.org/profile/deplicator/"><%= parseUnicodeString(activity.jsonObject.name) %></a></div>
+                        <%
+                        break;
                     default:
                         %><h3><%= activity.type.capitalize() %></h3>
                         <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
@@ -273,6 +279,13 @@
                         <td class="codecademy-logo"></td>
                         <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                         <td><img src="<%= activity.jsonObject.badge %>" height=32 alt="badge"/><p>Earned <a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a> on Codecademy.</p></td>
+                        <%
+                        break;
+                    case("khanacademy"):
+                        %>
+                        <td class="ka-logo"></td>
+                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                        <td><img src="<%= activity.jsonObject.icon %>" height=32 alt="badge"/><p>Earned <a href="<%= activity.jsonObject.badgelink %>" title="<%= activity.jsonObject.description %>"><%= parseUnicodeString(activity.jsonObject.name) %></a> on Codecademy.</p></td>
                         <%
                         break;
                     default:

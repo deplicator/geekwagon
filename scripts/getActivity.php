@@ -26,7 +26,7 @@ $limitlb = $limitub - 30;
 
 
 try {
-    $DBH = new PDO($DB_PDO, $DB_USER, $DB_PASS);
+    $DBH = new PDO(DB_PDO, DB_USER, DB_PASS);
     if ($recent) {
         $sql = "SELECT `activityTime`, `type`, `jsonObject`
                 FROM activity 
@@ -38,7 +38,10 @@ try {
                                         WHERE `type` = 'blog') OR 
                       `activityTime` = (SELECT MAX(`activityTime`)
                                         FROM `activity`
-                                        WHERE `type` = 'codecademy')";
+                                        WHERE `type` = 'codecademy') OR
+                      `activityTime` = (SELECT MAX(`activityTime`)
+                                        FROM `activity`
+                                        WHERE `type` = 'khanacademy')";
     } else if($all) {
         $sql = "SELECT * from `activity` ORDER BY `activityTime` DESC LIMIT 30, 18446744073709551615";
     } else {

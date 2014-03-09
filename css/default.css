@@ -228,6 +228,11 @@ nav a:hover {
 
 
 /*** Sections ***/
+
+#latest-activity {
+    max-width: 25vw;
+}
+
 section {
     margin: 0 auto 26px;
     min-width: 180px;
@@ -351,6 +356,14 @@ table tr:nth-child(even) {
     background: url(../images/codecademy-logo-hover.png) no-repeat;
     background-size: auto 24px;
     background-position: center; 
+}
+
+.ka-logo {
+    background: url(../images/leaf-orange.png) no-repeat;
+    background-size: auto 24px;
+    background-position: center;
+    cursor: pointer;
+    cursor: hand;
 }
 
 /** RESUME **/

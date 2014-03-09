@@ -99,7 +99,7 @@ $(document).ready(function() {
         //console.log("success");
     }).done(function(activities) {
         activities.forEach(function(activity) {
-            template = $("#summary-item").html();
+            var template = $("#summary-item").html();
             $("#latest-activity").append(_.template(template, {activity: activity}));
         });
     }).fail(function() {
