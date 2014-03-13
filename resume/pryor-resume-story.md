@@ -1,7 +1,7 @@
+<!-- Story resume in markdown. -->
+
 James Pryor
 ===========
-
-<!--markdown resume version 2-->
 
 I am an enthusiastic student with a passion for computer science and web 
 development seeking a position to gain experience.

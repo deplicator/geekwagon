@@ -1,17 +1,117 @@
-@import url(fonts.css);
+/*
+Google WebFont's imports
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import url(http://fonts.googleapis.com/css?family=Habibi);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../fonts/OpenSans.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../fonts/OpenSans-Semibold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../fonts/OpenSans-Italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(../fonts/UbuntuMono-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Habibi';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Habibi'), local('Habibi-Regular'), url(../fonts/Habibi-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(../fonts/Roboto-Thin.woff) format('woff');
+}
 
-/** DEFAULTS **/
-body {
+/*!
+  Ionicons, v1.4.1
+  Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
+  https://twitter.com/benjsperry  https://twitter.com/ionicframework
+  MIT License: https://github.com/driftyco/ionicons
+  
+  This is a subset of Ionicons, only uses what is needed.
+*/
+@font-face {
+    font-family: "Ionicons";
+    src: url("../fonts/ionicons.eot?v=1.4.1");
+    src: url("../fonts/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), 
+         url("../fonts/ionicons.ttf?v=1.4.1") format("truetype"), 
+         url("../fonts/ionicons.woff?v=1.4.1") format("woff"), 
+         url("../fonts/ionicons.svg?v=1.4.1#Ionicons") format("svg"); font-weight: normal; font-style: normal; 
+}
+
+[class*="ion-"] {
+    font-family: 'Ionicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* used in header contact */
+.ion-ios7-email-outline:before { content: "\f186"; }
+.ion-social-facebook-outline:before { content: "\f230"; }
+.ion-social-github-outline:before { content: "\f232"; }
+.ion-social-googleplus-outline:before { content: "\f234"; }
+.ion-social-linkedin-outline:before { content: "\f238"; }
+.ion-social-rss-outline:before { content: "\f23c"; }
+
+/* used in activity table*/
+.ion-social-github:before { content: "\f233"; }
+.ion-social-rss:before { content: "\f23d"; }
+
+/* used on resume */
+.ion-chatbubble-working:before { content: "\f11d"; }
+.ion-document-text:before { content: "\f12e"; }
+.ion-android-book:before { content: "\f2d0"; }
+
+
+/* 
+Responsive Design Reasoning
+more at: http://blog.geekwagon.net/linktothepostaboutresponsivestuffIhaven'tmadeyet
+
+break points
+300px - mobile devices are usually 1080px width / device pixel ratio of 3 = 360, anyone perusing the web at less than 300px, I'm not worried about you.
+625px - Chrome using half of a 4:3 screen at a resolution 1280x1024.
+944px - Chrome using half of a 16:9 screen at a resolution 1920x1800.
+    
+*/
+
+
+/** Global **/
+html {
+    height: 100%;
     overflow-y: scroll;
 }
 
-body,
-html {
-    background: url(../images/binary.png);
+body {
     color: #242424;
     font: normal 400 1em 'Habibi', serif;
     height: 100%;
     margin: 0;
+    min-width: 310px;
     padding: 0;
 }
 
@@ -45,10 +145,16 @@ h2[descr]:hover::after {
     z-index: 1;
 }
 
-p {
-    line-height: 1.25;
+h3 {
+    margin: 0;
 }
 
+p {
+    line-height: 1.25;
+    margin: 0 0 .5em 0;
+}
+
+/* links */
 a:link,
 a:link {
     color: #5366F3;
@@ -64,22 +170,19 @@ a:visited {
     color: #868686
 }
 
-
-#wrap {
-    background: #FEFEFE;
-    border-left: 1px solid #242424;
-    border-right: 1px solid #242424;
-    box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.18);
-    margin:0 auto -70px;
-    max-width: 2700px;
-    min-height: 100%;
-    min-width: 42em;
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 80vw;
+.mobile-hidden {
+    display: none;
 }
 
-/** HEADER and CONTACT**/
+#wrap {
+    margin: 0 auto -8em;
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 0 5em 0;
+}
+
+/** HEADER & CONTACT **/
 header {
     background: #E18A07;
     background-image: linear-gradient(bottom, #D49F51 8%, #E18A07 54%);
@@ -88,21 +191,18 @@ header {
     background-image: -webkit-linear-gradient(bottom, #D49F51 8%, #E18A07 54%);
     background-image: -ms-linear-gradient(bottom, #D49F51 8%, #E18A07 54%);
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.08, #D49F51), color-stop(0.54, #E18A07));
-    height: 7em;
     margin: 0 auto;
     padding: 0;
-
 }
 
 header h1 {
+    color: #FEFEFE;
     font: normal small-caps 200 3em 'Roboto', sans-serif;
     letter-spacing: 0.075em;
+    margin: 0 0 0 .25em;
+    text-align: center;
     text-shadow: .1em .1em 3px #C50;
     white-space: nowrap;
-    color: #FEFEFE;
-    float: left;
-    margin: 0 0 0 .25em;
-    
 }
 
 header h1 a:link,
@@ -120,27 +220,22 @@ header h1 a:active {
 }
 
 #contact {
-    float: left;
-    font-size: 3em;
+    font-size: 2.5em;
     list-style: none;
-    padding: 0;
-    margin: .15em 0 0 .75em;
+    margin: 0 0 0 -0.6em;
+    padding: 0 0 1em 0;
+    text-align: center;
 }
 
 #contact li {
     display: inline;
-    margin: 0;
-    
+    margin: 0 -0.6em 0 0;
 }
 
 #contact li a:link {
-    border-radius: 11px;
     color: #ECECEC;
     text-shadow: .05em .05em 3px #C50;
-    padding: 0 8px;
-    margin:  5px 0 0 5px;
-    height: 50px;
-    float: left;
+    padding: 10px;
     transition: all 0.2s ease;
 }
 
@@ -150,8 +245,6 @@ header h1 a:active {
 
 #contact li a:hover {
     text-decoration: none;
-    text-shadow: .15em .15em 5px #C50;
-    margin: 0 5px 5px 0;
 }
 
 /** NAVIGATION **/
@@ -207,41 +300,13 @@ nav .selected:hover {
     background: #FEFEFE;
 }
 
-/* for blog menu item */
-nav a:link,
-nav a:active,
-nav a:visited,
-nav a:hover {
-    color: inherit;
-    text-decoration: none;
-}
 
-
-/*** Pages ***/
+/** CONTENT **/
 .page {
     padding: 1em 1em 4em 1em;
 }
 
-.page > p {
-    margin: .5em 2em;
-}
-
-
-/*** Sections ***/
-
-#latest-activity {
-    max-width: 25vw;
-}
-
-section {
-    margin: 0 auto 26px;
-    min-width: 180px;
-    position: relative;
-    margin: 0 0 85px 0;
-}
-
-
-/*** Summary Page***/
+/* Summary tab - Latest Activity */
 #latest-activity h3 {
     clear: both;
     float: left;
@@ -259,34 +324,34 @@ section {
     margin: 0 0 1em 2em;
 }
 
+/* Summary tab - Projects */
 .project-summary {
     border: 1px solid #ccc;
     border-radius: .5em;
-    clear: both;
-    margin: 1em 0 0 0;
-    transition: all .5s linear;
-    min-height: 15.375em;
-    padding: .5em;
     cursor: hand;
     cursor: pointer;
+    clear: both;
+    margin: 1em 0 0 0; 
+    min-height: 15.375em;
+    padding: .5em;
+    transition: all .5s linear;
 }
 
 .project-summary:hover {
     background: #efefef;
     border: 1px solid #777;
-    
 }
 
 .project-summary h3 {
-    margin: 0 0 0 0.5em;
+    margin: 0 0 1em 0.5em;
 }
 
 .project-summary img {
-    float: right;
-    width: 200px;
-    padding: .25em;
     border: 1px solid #CCC;
-    margin: .5em 0 0 .5em;
+    float: right;
+    margin: .25em 0 0 .25em;
+    padding: .125em;
+    width: 125px;
 }
 
 .project-summary .tools {
@@ -299,52 +364,56 @@ section {
     padding: 1px 4px;
 }
 
-
-/*** Activity Table ***/
-table {
+/* Activity tab */
+#tehactivities {
     border: 1px solid #c50;
     border-collapse: collapse;
     font: normal normal 400 0.8em 'Open Sans', san-serif;
     margin: 0 auto;
-    width: 75vw;
+    width: 90vw;
 }
 
-table td {
+#tehactivities td {
     border: 1px solid #c50;
     padding: 4px;
     vertical-align: middle;
 }
 
-td:nth-child(1) {
+#tehactivities td:nth-child(1) {
     font-size: 2em;
     width: 10px;
 }
 
-td:nth-child(1) a:link,
-td:nth-child(1) a:visited {
+#tehactivities td:nth-child(1) a:link,
+#tehactivities td:nth-child(1) a:visited {
     color: #C50;
     text-decoration: none;
 }
 
-td:nth-child(1) a:hover {
+#tehactivities td:nth-child(1) a:hover {
     color: #E18A07;
 }
 
-table p,
-table img {
+#tehactivities p,
+#tehactivities img {
     float: left;
-    line-height: .5;
+    line-height: 1.1;
+    margin: 2px;
 }
 
-table em {
+#tehactivities p {
+width: 50vw;
+}
+
+#tehactivities em {
     font: italic normal 400 0.95em 'Open Sans', san-serif;
 }
 
-table tr:nth-child(even) {
+#tehactivities tr:nth-child(even) {
     background: #CFCFCF;
 }
 
-.codecademy-logo {
+#tehactivities .codecademy-logo {
     background: url(../images/codecademy-logo.png) no-repeat;
     background-size: auto 24px;
     background-position: center;
@@ -352,13 +421,13 @@ table tr:nth-child(even) {
     cursor: hand;
 }
 
-.codecademy-logo:hover {
+#tehactivities .codecademy-logo:hover {
     background: url(../images/codecademy-logo-hover.png) no-repeat;
     background-size: auto 24px;
     background-position: center; 
 }
 
-.ka-logo {
+#tehactivities .ka-logo {
     background: url(../images/leaf-orange.png) no-repeat;
     background-size: auto 24px;
     background-position: center;
@@ -366,41 +435,77 @@ table tr:nth-child(even) {
     cursor: hand;
 }
 
-/** RESUME **/
+/* Resume tab */
+#resume {
+    margin: 0 auto;
+    max-width: 50em; /* prevent resume from getting too wide */
+}
+
 #resume .page-submenu {
     font: normal 400 1em 'Ubuntu Mono', monospace;
-    padding: .5em;
+    padding: 0.5em 0.5em 2em 0.5em;
     text-align: right;
 }
 
-#resume h3 {
-    border-top: 1px solid #DDD;
+#resume-length {
+    list-style: none;
+    height: 2em;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 12em;
+}
+
+#resume-length li {
+    background: rgba(225, 138, 7, 0.5);
+    border: 1px solid #868686;
+    border-radius: 6px;
+    color: rgba(36, 36, 36, 0.75);
+    cursor: pointer;
+    cursor: hand;
+    display: inline;
+    height: 2.5em;
+    float: left;
+    margin: 0 .125em;
+    padding: 0.25em .25em 0 0.25em;
+}
+
+#resume-length .active {
+    background: rgba(225, 138, 7, 0.93);
+    border: 1px solid;
+    color: #242424;
+}
+
+#resume-length [class*="ion-"] {
+    font-size: 1.5em;
+}
+
+#resume-content h3 {
+    border-top: 1px solid #ddd;
     margin: 1em 0 0 0;
 }
 
-#resume ul {
-    margin: 0 0 15px 0;
-}
-
-#resume p {
-    margin: -15px 0 0 0;
-}
-
-#resume strong {
+#resume-content strong {
     float: right;
     font-family: 'Ubuntu Mono', monospace;
-    
+    font-weight: 400; /*blasphemy!*/
+    margin: 0 2em 0 0;
+}
+
+#resume-content em {
+    font-size: .9em;
+}
+
+/* Why non-tab */
+#why {
+    margin: 0 auto;
+    max-width: 50em; /* prevent why blurb from getting too wide */
 }
 
 /** FOOTER **/
 footer {
     clear: both;
-    color: #ECECEC;
-    height: 50px;
-    margin: 0 auto;
-    padding: 5px 0;
-    min-width: 180px;
-    width: 80vw;
+    height: 3em;
 }
 
 footer h2 {
@@ -415,24 +520,114 @@ footer h2 a:active,
 footer h2 a:visited {
     color: rgba(0, 0, 0, 0.25);
     font: normal normal 200 1.4em 'Roboto', sans-serif;
-    margin: 0 1em 0 0;
-    text-align: right;
-
 }
 
+/* project pictures smaller on portrait mobile devices */
+@media all and (min-width: 25em /* 400px */) { 
+    .project-summary img {
+        margin: .5em 0 0 .5em;
+        padding: .25em;
+        width: 200px;
+    }
+}
 
-/* Single column for anything less than ~896px */
-/* For two columns, between ~896px and ~1600px */
-@media all and (min-width: 78em) {
-    section {
-        float: left;
+@media all and (min-width: 40em /* 640px */) {
+    .mobile-hidden {
+        display: block;
+    }
+
+    header {
+        height: 7em;
     }
     
-    section + section {
+    header h1 {
+        text-align: left;
+    }
+    
+    header #contact {
         float: right;
-        padding: 0 2vw 0 0;
-        width: 48.3vw;
+        font-size: 2.5em;
+        list-style: none;
+        margin: -1em 0 0 0;
+        padding: 0;
     }
 
+    header #contact li {
+        display: inline;
+        margin: 0;
+        
+    }
 
+    header #contact li a:link {
+        border-radius: 11px;
+        color: #ECECEC;
+        text-shadow: .05em .05em 3px #C50;
+        padding: 0 8px;
+        margin:  5px 0 0 5px;
+        height: 50px;
+        float: left;
+        transition: all 0.2s ease;
+    }
+
+    header #contact li a:visited {
+        color: #ECECEC;
+    }
+
+    header #contact li a:hover {
+        text-decoration: none;
+        text-shadow: .15em .15em 5px #C50;
+        margin: 0 5px 5px 0;
+    }
+    
+    nav #mi-activity {
+        display: block;
+    }
+    
+    footer {
+        margin: -8em 0 0 0;
+    }
+}
+
+@media all and (min-width: 60em /* 960px */) {
+    body {
+        background: url(../images/binary.png);
+    }
+    
+    #wrap {
+        background: #FEFEFE;
+        border-left: 1px solid #242424;
+        border-right: 1px solid #242424;
+        box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.18);
+        width: 80vw;
+    }
+    
+    header {
+        height: 8em;
+    }
+    
+    header #contact {
+        font-size: 3em;
+    }
+    
+    #tehactivities {
+        width: 75vw;
+    }
+    
+    footer {
+        width: 80vw;
+        margin: 0 auto;
+    }
+}
+
+@media all and (min-width: 69em /* just shy of full screen on 1280px width */) {
+    /* changes the summary page to two columns */
+    #summary #latest-activity {
+        float: left;
+        width: 25vw;
+    }
+    
+    #summary #project-summaries {
+        float: left;
+        width: 50vw;
+    }
 }

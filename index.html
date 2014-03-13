@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head prefix="og: http://ogp.me/ns#">
-    <meta charset="utf-8">
     <title>James Pryor's Personal Site</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Personal projects and other adventures of James.">
     <meta name="google-site-verification" content="zbf_AZ2WITDTSvGVXDwBxbIwg0JVNmPrWCsIW6hWm9A">
     
@@ -13,7 +14,6 @@
     <meta property="og:description" content="Personal projects and other adventures of James.">
     
     <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/ionicons.css">
     <script src="libs/jquery-1.10.2.min.js"></script>
     <script src="libs/underscore-1.5.2.min.js"></script>
     <script src="libs/marked.js"></script><!--https://github.com/chjj/marked/-->
@@ -25,37 +25,40 @@
             <h1><a href="http://jamespryor.net">james pryor</a></h1>
             <ul id="contact">
                 <li>
-                    <a class="icon-ios7-email-outline"
+                    <a class="ion-ios7-email-outline"
                        title="Email is one of the best ways to contact me."
                        href="mailto:james@geekwagon.net"></a>
                 </li>
                 <li>
-                    <a class="icon-social-facebook-outline"
+                    <a class="ion-social-facebook-outline"
                        href="https://www.facebook.com/deplicator"></a>
                 </li>
                 <li>
-                    <a class="icon-social-github-outline"
+                    <a class="ion-social-github-outline"
                        title="I don't always put Facebook before GitHub, but when I do it's because 
                               they're in alphabetical order."
                        href="https://github.com/deplicator"></a>
                 </li>
                 <li>
-                    <a class="icon-social-googleplus-outline"
+                    <a class="ion-social-googleplus-outline"
                        href="https://plus.google.com/100479632575151546186?rel=author"></a>
                 </li>
                 <li>
-                    <a class="icon-social-linkedin-outline"
-                       href="https://github.com/deplicator">
+                    <a class="ion-social-linkedin-outline"
+                       href="https://www.linkedin.com/in/pryorjames">
                     </a>
+                </li>
+                <li>
+                    <a class="ion-social-rss-outline" href="http://blog.geekwagon.net"></a>
                 </li>
             </ul>
         </header>
         <nav>
             <ul>
                 <li class="menu-item selected" id="mi-summary">Summary</li>
-                <li class="menu-item" id="mi-activity">Activity</li>
+                <li class="menu-item mobile-hidden" id="mi-activity">Activity</li>
                 <!--<li class="menu-item" id="mi-projects">Projects</li>-->
-                <li class="menu-item" <!--id="mi-blog" --><a href="http://blog.geekwagon.net">Blog</a></li>
+                <!--<li class="menu-item" id="mi-blog">Blog</li>-->
                 <li class="menu-item" id="mi-resume">R&eacute;sum&eacute;</li>
             </ul>
         </nav>
@@ -64,6 +67,7 @@
             
             <section id="latest-activity">
                 <h2 descr="Click to see all activity!"><a href="#activity">Latest Activity</a></h2>
+                <!-- recent activity gets inserted here -->
             </section>
             
             <section id="project-summaries">
@@ -150,12 +154,27 @@
         </div><!--activity-->
         
         <div class="page" id="blog">
+            <!-- display the latest blog posts -->
             
         </div><!--blog-->
         
         <div class="page" id="resume">
             <div class="page-submenu">
-                download: <a href="resume/pryor-resume.pdf">pdf</a> | <a href="resume/pryor-resume.md">markdown</a>
+                <span class="mobile-hidden">download: <a href="resume/pryor-resume.pdf">pdf</a> | <a href="resume/pryor-resume-standard.md">markdown</a></span>
+                <ul id="resume-length">
+                    <li id="dr-brief">
+                        <div class="ion-chatbubble-working"></div>
+                        Brief
+                    </li>
+                    <li id="dr-standard" class="active">
+                        <div class="ion-document-text"></div>
+                        Standard
+                    </li>
+                    <li id="dr-story">
+                        <div class="ion-android-book"></div>
+                        Story
+                    </li>
+                </ul>
             </div>
             <section id="resume-content"></section>
         </div><!--resume-->
@@ -243,7 +262,7 @@
                         switch(activity.jsonObject.type) {
                             case("PushEvent"):
                                 %>
-                                <td><a class="icon-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
                                 <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                                 <td>Made a commit to <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> repository on Github.<br>
                                 <em>Message: <%= activity.jsonObject.payload.commits[0].message %></em></td>
@@ -251,7 +270,7 @@
                                 break;
                             case("CreateEvent"):
                                 %>
-                                <td><a class="icon-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
                                 <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                                 <td>Created new repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
                                 <em>Description: <%= activity.jsonObject.payload.description %></em></td>
@@ -259,7 +278,7 @@
                                 break;
                             default:
                                 %>
-                                <td><a class="icon-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
                                 <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                                 <td>Unaccounted for Github event</td>
                                 <%
@@ -268,7 +287,7 @@
                         break;
                     case("blog"):
                         %>
-                        <td><a class="icon-social-rss" href="https://blog.geekwagon.net"></a></td>
+                        <td><a class="ion-social-rss" href="https://blog.geekwagon.net"></a></td>
                         <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                         <td>New blog post titled: <a href="<%= activity.jsonObject.link %>"><%= activity.jsonObject.title %></a>.<br>
                         <em>Comments: <%= activity.jsonObject.comments %></em></td>
