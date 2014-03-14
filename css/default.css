@@ -453,7 +453,7 @@ width: 50vw;
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    width: 12em;
+    width: 13em;
 }
 
 #resume-length li {
@@ -496,7 +496,7 @@ width: 50vw;
     font-size: .9em;
 }
 
-/* Why non-tab */
+/* Why page that works like a tab, but is not a tab */
 #why {
     margin: 0 auto;
     max-width: 50em; /* prevent why blurb from getting too wide */
@@ -625,9 +625,13 @@ footer h2 a:visited {
         float: left;
         width: 25vw;
     }
-    
+
     #summary #project-summaries {
         float: left;
         width: 50vw;
+    }
+    
+    #summary #project-summaries:last-of-type {
+        margin-bottom: 5em;
     }
 }

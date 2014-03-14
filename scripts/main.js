@@ -23,22 +23,23 @@ function DisplaySection() {
     })
 }
 
+/**
+ * Pulls activities from the database in descending order thirty at a time and inserts them into the
+ * activity table with an underscore template.
+ *
+ * @param [limit] integer   Where to start from, if not provided it starts from the latest activity.
+ */
 function pullActivity(limit) {
-    if (arguments.length == 0) {
-        limit = "all";
-    }
+    if (arguments.length == 0) { limit = 0; }
     $.getJSON("scripts/getActivity.php?limit=" + limit, function() {
-        //console.log("success");
+        //console.log(limit);
     }).done(function(activities) {
-        test = activities;
         activities.forEach(function(activity) {
-            template = $("#activity-item").html();
+            var template = $("#activity-item").html();
             $("#tehactivities tbody").append(_.template(template, {activity: activity}));
         });
     }).fail(function() {
         console.log("Error: Failed to get data from getActivitiy.php.");
-    }).always(function() {
-        //console.log("complete");
     });
 }
 
@@ -91,14 +92,23 @@ $(document).ready(function() {
         
         //Pull all activity when user scrolls down.
         if(window.location.hash == "#activity"){
-            pullFlag = true;
-            $(document).scroll(function() {
-                if($(document).scrollTop() > 600 && pullFlag) {
-                    pullFlag = false;
-                    pullActivity('all');
-                    
+            count = 0;
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+                    pullActivity(count += 30);
+
                 }
+                
             });
+            
+            // pullFlag = true;
+            // $(document).scroll(function() {
+                // if($(document).scrollTop() > 600 && pullFlag) {
+                    // pullFlag = false;
+                    // pullActivity('all');
+
+                // }
+            // });
         }
     });
     $(window).trigger('hashchange');
@@ -109,7 +119,7 @@ $(document).ready(function() {
     })
 
     //Show first 30 events on Activity page.
-    pullActivity(30);
+    pullActivity();
     
     //Show latest events on summary page.
     $.getJSON("scripts/getActivity.php?limit=recent", function() {
