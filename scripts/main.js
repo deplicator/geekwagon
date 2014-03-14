@@ -131,15 +131,15 @@ $(document).ready(function() {
     displayResume('standard');
     
     // Pulls activity as user scrolls down Activity table.
-    if(window.location.hash == "#activity"){
-        count = 0;
-        $(window).scroll(function () {
+    var count = 0;
+    $(window).scroll(function () {
+        if(window.location.hash == "#activity"){
             if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
                 pullActivity(count += 30);
-
             }
-        });
-    }
+        }
+    });
+    
     
     /** Click Handlers - because clicks must be handled. **/
     
