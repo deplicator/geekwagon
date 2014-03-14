@@ -154,7 +154,7 @@
         </div><!--activity-->
         
         <div class="page" id="blog">
-            <!-- display the latest blog posts -->
+            <!-- display the latest blog posts... someday -->
             
         </div><!--blog-->
         
@@ -211,7 +211,7 @@
             <%
                 switch(activity.type) {
                     case("github"):
-                        %><h3><%= activity.type.capitalize() %></h3>
+                        %><h3>Github</h3>
                         <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div><%
                         switch(activity.jsonObject.type) {
                             case("PushEvent"):
@@ -232,7 +232,7 @@
                         <%
                         break;
                     case("codecademy"):
-                        %><h3><%= activity.type.capitalize() %></h3>
+                        %><h3>Codecademy</h3>
                         <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
                         <div class="description"><a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a></div>
                         <%
@@ -244,7 +244,7 @@
                         <%
                         break;
                     default:
-                        %><h3><%= activity.type.capitalize() %></h3>
+                        %><h3><%= activity.type %></h3>
                         <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
                         <%
                         break;
