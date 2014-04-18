@@ -11,12 +11,12 @@ Contact Information
 -------------------
 (832) 515-6956 | 
 [Email](james@geekwagon.net) | 
-[Portfolio](jamespryor.net) | 
-[Blog](blog.geekwagon.net)  
-[Facebook](facebook.com/deplicator) | 
-[Github](github.com/deplicator) | 
-[Google+](plus.google.com/+JamesPryor) | 
-[Linkedin](linkedin.com/in/pryorjames)  
+[Portfolio](http://jamespryor.net) | 
+[Blog](http://blog.geekwagon.net)  
+[Facebook](http://facebook.com/deplicator) | 
+[Github](http://github.com/deplicator) | 
+[Google+](http://plus.google.com/+JamesPryor) | 
+[Linkedin](http://linkedin.com/in/pryorjames)  
 
 
 Achievements
