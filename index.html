@@ -309,11 +309,8 @@
                                 <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
                                 <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                                 <td>Made a commit to <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> repository on Github.<br>
-                                <% if(activity.jsonObject.payload.size == 1) { %>
-                                <em>Message: <%= activity.jsonObject.payload.commits[0].message %></em></td>
-                                <% } else { %>
-                                <em>Message: Merge pull request.</em></td>
-                                <% }
+                                <em>Message: <%= activity.jsonObject.payload.commits[activity.jsonObject.payload.size - 1].message %></em></td>
+                                <%
                                 break;
                             case("CreateEvent"):
                                 %>
