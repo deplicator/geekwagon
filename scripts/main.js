@@ -12,10 +12,8 @@
  */
 function pullActivity(limit) {
     if (arguments.length == 0) { limit = 0; }
-    $.getJSON('scripts/getActivity.php?limit=' + limit, function() {
-        // For diagnostics
-        //console.log('success');
-    }).done(function(activities) {
+    $.getJSON('scripts/getActivity.php?limit=' + limit)
+     .done(function(activities) {
         activities.forEach(function(activity) {
             var template = $('#activity-item').html();
             $('#tehactivities tbody').append(_.template(template, {activity: activity}));
@@ -131,6 +129,7 @@ $(document).ready(function() {
     displayResume('standard');
     
     // Pulls activity as user scrolls down Activity table.
+    //[TODO]: if user starts on activity tab doesn't display properly
     var count = 0;
     $(window).scroll(function () {
         if(window.location.hash == "#activity"){

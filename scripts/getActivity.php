@@ -40,7 +40,7 @@ try {
     $result = [];
     while ($obj = $STH->fetch()) {
         $arr = array('type' => $obj->type, 'activityTime' => $obj->activityTime, 'jsonObject' => json_decode($obj->jsonObject));
-        array_push($result, $arr);;
+        array_push($result, $arr);
     }
     echo json_encode($result);
 }

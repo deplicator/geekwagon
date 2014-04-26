@@ -379,6 +379,7 @@ nav .selected:hover {
     vertical-align: middle;
 }
 
+/* icon column */
 #tehactivities td:nth-child(1) {
     font-size: 2em;
     width: 10px;
@@ -581,6 +582,11 @@ footer h2 a:visited {
     
     nav #mi-activity {
         display: block;
+    }
+    
+    /* date column */
+    #tehactivities td:nth-child(2) {
+        min-width: 110px;
     }
     
     footer {

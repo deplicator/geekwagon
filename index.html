@@ -239,13 +239,30 @@
                 switch(activity.type) {
                     case("github"):
                         %><h3>Github</h3>
-                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div><%
+                        <div class="date">
+                            <%= displayTime(parseInt(activity.activityTime + "000", 10)) %>
+                        </div><%
                         switch(activity.jsonObject.type) {
                             case("PushEvent"):
-                                %><div class="description">Commit to <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a></div><%
+                                %>
+                                <div class="description">Committed to 
+                                    <a href="<%= activity.jsonObject.repolink %>">
+                                    <%= activity.jsonObject.repo %></a>
+                                </div><%
                                 break;
                             case("CreateEvent"):
-                                %><div class="description">Created new repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a></div><%
+                                %>
+                                <div class="description">Created new repository named 
+                                    <a href="<%= activity.jsonObject.repolink %>">
+                                    <%= activity.jsonObject.repo %></a>
+                                </div><%
+                                break;
+                            case("WatchEvent"):
+                                %>
+                                <div class="description">Started watching repository named 
+                                    <a href="<%= activity.jsonObject.repolink %>">
+                                    <%= activity.jsonObject.repo %></a>
+                                </div><%
                                 break;
                             default:
                                 %><div class="description">Unaccounted for Github event.</div><%
@@ -292,8 +309,11 @@
                                 <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
                                 <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                                 <td>Made a commit to <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> repository on Github.<br>
+                                <% if(activity.jsonObject.payload.size == 1) { %>
                                 <em>Message: <%= activity.jsonObject.payload.commits[0].message %></em></td>
-                                <%
+                                <% } else { %>
+                                <em>Message: Merge pull request.</em></td>
+                                <% }
                                 break;
                             case("CreateEvent"):
                                 %>
@@ -301,6 +321,30 @@
                                 <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
                                 <td>Created new repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
                                 <em>Description: <%= activity.jsonObject.payload.description %></em></td>
+                                <%
+                                break;
+                            case("WatchEvent"):
+                                %>
+                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                                <td>Started watching a repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
+                                </td>
+                                <%
+                                break;
+                            case("PullRequestEvent"):
+                                %>
+                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                                <td>Got a pull request on <a href="<%= activity.jsonObject.repolink %>">
+                                <%= activity.jsonObject.repo %></a> by <a href="<%= activity.jsonObject.payload.pull_request.user.html_url %>"><%= activity.jsonObject.payload.pull_request.user.login %></a> on Github.<br>
+                                <em>Description: <%= activity.jsonObject.payload.pull_request.title %>.</em></td>
+                                <%
+                                break;
+                            case("IssueCommentEvent"):
+                                %>
+                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
+                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
+                                <td>Made a comment on <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
                                 <%
                                 break;
                             default:
