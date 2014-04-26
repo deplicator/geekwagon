@@ -224,6 +224,15 @@ try {
             }
         }
     }
+    
+    /**
+     * Habit RPG
+     */
+    
+    
+    
+    
+    
 
 } catch (PDOException $e) {
     echo $e->getMessage();
