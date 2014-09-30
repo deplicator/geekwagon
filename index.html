@@ -71,7 +71,21 @@
             </section>
             
             <section id="project-summaries">
-                <h2>Projects</h2>
+                <h2>Personal Projects</h2>
+                
+                <div class="project-summary" href="http://blog.geekwagon.net/2014/07/my-first-wildstar-addon-kaels-housing.html">
+                    <h3>Kael's Housing Tour - WildStar Addon</h3>
+                    <div>
+                        <img src="http://geekwagon.net/projects/HousingTour/khtss2.png" width="210">
+                        <p>
+                            WildStar's interface leaves plenty of room for improvement. This project
+                            makes it easier to navigate public properties in the game.
+                        </p>
+                        <span class="tools">Lua</span>
+                        <span class="tools">Apollo</span>
+                    </div>
+                </div>
+                
                 <div class="project-summary" href="http://geekwagon.net/projects/u7pp/">
                     <h3>Ultima VII Party Planner</h3>
                     <div>
@@ -84,6 +98,7 @@
                         <span class="tools">backbone.js</span>
                     </div>
                 </div>
+                
                 <div class="project-summary" href="http://geekwagon.net/projects/comp2003/project/">
                     <h3>PVAMU Computer Science Department</h3>
                     <div>
@@ -160,22 +175,23 @@
         
         <div class="page" id="resume">
             <div class="page-submenu">
-                <span class="mobile-hidden">download: 
+                <span class="mobile-hidden">
+                    <!--<a href="resume/index.html">printable</a> | -->
                     <a href="resume/pryor-resume.pdf">pdf</a> | 
-                    <a href="resume/pryor-resume-standard.md">markdown</a>
+                    <a href="resume/pryor-resume.txt">markdown</a>
                 </span>
                 <ul id="resume-length">
                     <li id="dr-brief" title="Fits in a tweat!">
                         <div class="ion-chatbubble-working"></div>
-                        Brief
+                        In a Tweet
                     </li>
                     <li id="dr-standard" class="active">
                         <div class="ion-document-text"></div>
-                        Standard
+                        Single Page
                     </li>
                     <li id="dr-story">
                         <div class="ion-android-book"></div>
-                        Story
+                        Full History
                     </li>
                 </ul>
             </div>
@@ -233,6 +249,7 @@
     </footer>
     
     <script src="scripts/main.js"></script>
+    
     <script type="text/html" id="summary-item">
         <% if (activity.jsonObject !== null) { %>
             <%

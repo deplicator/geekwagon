@@ -438,6 +438,7 @@ width: 50vw;
 
 /* Resume tab */
 #resume {
+    font: normal 400 1em 'Open Sans', sans-serif;
     margin: 0 auto;
     max-width: 50em; /* prevent resume from getting too wide */
 }
@@ -454,7 +455,7 @@ width: 50vw;
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    width: 13em;
+    width: 19.2em;
 }
 
 #resume-length li {
@@ -481,16 +482,24 @@ width: 50vw;
     font-size: 1.5em;
 }
 
+#resume-content h1 {
+    font: normal small-caps 200 3em 'Roboto', sans-serif;
+    text-transform: lowercase;
+    margin: 0;
+}
+
 #resume-content h3 {
     border-top: 1px solid #ddd;
     margin: 1em 0 0 0;
+    font: normal 700 1.2em 'Habibi', serif;
+    padding: .3em 0 0 0;
 }
 
 #resume-content strong {
     float: right;
     font-family: 'Ubuntu Mono', monospace;
     font-weight: 400; /*blasphemy!*/
-    margin: 0 2em 0 0;
+    margin: -1.25em 2em 0 0
 }
 
 #resume-content em {
