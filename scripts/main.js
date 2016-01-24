@@ -6,8 +6,8 @@
 /**
  * Pulls activities from the database in descending order thirty at a time and inserts them into the
  * activity table with an underscore template.
- * 
- * @param [limit]       integer     Where to start from, if not provided it starts from the latest 
+ *
+ * @param [limit]       integer     Where to start from, if not provided it starts from the latest
  *                                  activity.
  */
 function pullActivity(limit) {
@@ -45,7 +45,7 @@ function getLatestActivity() {
 /**
  * Some of the text gathered from remote sites have strange characters. This fixes them, well some
  * of them.
- * 
+ *
  * @param usting        string      Unicode text to convert.
  */
 function parseUnicodeString(ustring) {
@@ -57,7 +57,7 @@ function parseUnicodeString(ustring) {
 
 /**
  * Takes Unix time as a string and returns a string formatted in the manor I deem prettiest.
- * 
+ *
  * @param unixTime      string      Time formated in number of seconds since January 1, 1970.
  */
 function displayTime(unixTime) {
@@ -76,8 +76,8 @@ function displayTime(unixTime) {
 /**
  * Swaps out my resume with the resume length buttons. I only did this because I liked the idea of
  * a tweet sized resume. Now I need a twitter account.
- * 
- * @param which         string      Accepts 'brief', 'standard', or 'story' and displays my resume 
+ *
+ * @param which         string      Accepts 'brief', 'standard', or 'story' and displays my resume
  *                                  with the corresponding name.
  */
 function displayResume(which) {
@@ -114,20 +114,23 @@ $(document).ready(function() {
         pages.filter(hash).fadeIn(600);
         $('.menu-item').removeClass('selected');
         $('#mi-' + hash.slice(1)).addClass('selected');
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 10);
     });
-    
+
     // Change to current hash if there is one in the address bar.
     $(window).trigger('hashchange');
-    
+
     // Call latest event function for Summary tab.
     getLatestActivity();
-    
+
     // Get the first 30 events for the Activity tab.
     pullActivity();
-    
+
     // Show standard resume.
     displayResume('standard');
-    
+
     // Pulls activity as user scrolls down Activity table.
     //[TODO]: if user starts on activity tab doesn't display properly
     var count = 0;
@@ -138,10 +141,10 @@ $(document).ready(function() {
             }
         }
     });
-    
-    
+
+
     /** Click Handlers - because clicks must be handled. **/
-    
+
     // Updates address bar hash when tab is clicked on.
     $('.menu-item').click(function() {
         window.location.hash = $(this).attr('id').slice(3);
@@ -160,21 +163,3 @@ $(document).ready(function() {
         $(this).addClass('active');
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

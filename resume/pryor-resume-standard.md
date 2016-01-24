@@ -48,7 +48,7 @@ _3.9 GPA - Bachelors in Computer Science_
 While at Prairie View I've held a few student employment positions; currently
 I'm working to create a web IDE for a cloud based image processor with the 
 [Cloud Computing Research Group][1].
-<pre><meter value="0.81755"></meter> <- earning bachelors 81.75%</pre>
+<pre><meter value="0.9127"></meter> <- earning bachelors 91.27%</pre>
 
 ### L3 Communications
 **Spring & Summer of 2013**  

@@ -1,28 +1,7 @@
-/*
-Google WebFont's imports
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
-@import url(http://fonts.googleapis.com/css?family=Habibi);
-@import url(http://fonts.googleapis.com/css?family=Roboto:100);
-*/
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(../fonts/OpenSans.woff) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../fonts/OpenSans-Semibold.woff) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../fonts/OpenSans-Italic.woff) format('woff');
-}
+@import url('../fonts/overpass/overpass.css');
+@import url('../fonts/opensans/opensans.css');
+
+
 @font-face {
   font-family: 'Ubuntu Mono';
   font-style: normal;
@@ -47,16 +26,16 @@ Google WebFont's imports
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
   https://twitter.com/benjsperry  https://twitter.com/ionicframework
   MIT License: https://github.com/driftyco/ionicons
-  
+
   This is a subset of Ionicons, only uses what is needed.
 */
 @font-face {
     font-family: "Ionicons";
     src: url("../fonts/ionicons.eot?v=1.4.1");
-    src: url("../fonts/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), 
-         url("../fonts/ionicons.ttf?v=1.4.1") format("truetype"), 
-         url("../fonts/ionicons.woff?v=1.4.1") format("woff"), 
-         url("../fonts/ionicons.svg?v=1.4.1#Ionicons") format("svg"); font-weight: normal; font-style: normal; 
+    src: url("../fonts/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"),
+         url("../fonts/ionicons.ttf?v=1.4.1") format("truetype"),
+         url("../fonts/ionicons.woff?v=1.4.1") format("woff"),
+         url("../fonts/ionicons.svg?v=1.4.1#Ionicons") format("svg"); font-weight: normal; font-style: normal;
 }
 
 [class*="ion-"] {
@@ -88,7 +67,7 @@ Google WebFont's imports
 .ion-android-book:before { content: "\f2d0"; }
 
 
-/* 
+/*
 Responsive Design Reasoning
 more at: http://blog.geekwagon.net/linktothepostaboutresponsivestuffIhaven'tmadeyet
 
@@ -96,7 +75,7 @@ break points
 300px - mobile devices are usually 1080px width / device pixel ratio of 3 = 360, anyone perusing the web at less than 300px, I'm not worried about you.
 625px - Chrome using half of a 4:3 screen at a resolution 1280x1024.
 944px - Chrome using half of a 16:9 screen at a resolution 1920x1800.
-    
+
 */
 
 
@@ -108,7 +87,7 @@ html {
 
 body {
     color: #242424;
-    font: normal 400 1em 'Habibi', serif;
+    font: normal 400 1em 'Open Sans', serif;
     height: 100%;
     margin: 0;
     min-width: 310px;
@@ -117,7 +96,7 @@ body {
 
 h2 {
     color: #E18A07;
-    font: normal 400 1.5em 'Ubuntu Mono', monospace;
+    font: normal 300 1.5em 'Overpass', monospace;
     position: relative;
     text-align: left;
 }
@@ -197,7 +176,7 @@ header {
 
 header h1 {
     color: #FEFEFE;
-    font: normal small-caps 200 3em 'Roboto', sans-serif;
+    font: normal small-caps 300 3em 'Overpass', sans-serif;
     letter-spacing: 0.075em;
     margin: 0 0 0 .25em;
     text-align: center;
@@ -252,7 +231,7 @@ nav {
     box-shadow: inset 0px -0.375em 0.375em -0.375em rgba(0, 0, 0, 0.5);
     border-bottom: 2px solid #C50;
     color: #FEFEFE;
-    font: normal 700 1em 'Open Sans', serif;
+    font: normal 600 1em 'Overpass', serif;
     height: 1.75em;
     margin: -1.75em 0 0 0;
     position: relative;
@@ -270,8 +249,8 @@ nav ul {
 nav li {
     background: transparent;
     display: inline;
-    margin: 0;
-    padding: 3px 15px;
+    margin: -2px 0 0 0;
+    padding: 5px 15px;
     transition: background 0.4s ease;
     position: relative;
     border-top-left-radius: 8px;
@@ -284,7 +263,7 @@ nav li:hover {
     background: #C50;
     cursor: hand;
     cursor: pointer;
-    
+
 }
 
 nav .selected {
@@ -316,7 +295,7 @@ nav .selected:hover {
 #latest-activity .date {
     float: left;
     font: normal 400 .9em 'Ubuntu Mono', monospace;
-    margin: .4em 0 0 .5em;
+    margin: .2em 0 0 .5em;
 }
 
 #latest-activity .description {
@@ -331,7 +310,7 @@ nav .selected:hover {
     cursor: hand;
     cursor: pointer;
     clear: both;
-    margin: 1em 0 0 0; 
+    margin: 1em 0 0 0;
     min-height: 15.375em;
     padding: .5em;
     transition: all .5s linear;
@@ -344,6 +323,7 @@ nav .selected:hover {
 
 .project-summary h3 {
     margin: 0 0 1em 0.5em;
+    font-family: Overpass;
 }
 
 .project-summary img {
@@ -368,7 +348,7 @@ nav .selected:hover {
 #tehactivities {
     border: 1px solid #c50;
     border-collapse: collapse;
-    font: normal normal 400 0.8em 'Open Sans', san-serif;
+    font: normal normal 400 0.8em 'Overpass', san-serif;
     margin: 0 auto;
     width: 90vw;
 }
@@ -407,7 +387,7 @@ width: 50vw;
 }
 
 #tehactivities em {
-    font: italic normal 400 0.95em 'Open Sans', san-serif;
+    font: italic normal 400 0.95em 'Overpass', san-serif;
 }
 
 #tehactivities tr:nth-child(even) {
@@ -425,7 +405,7 @@ width: 50vw;
 #tehactivities .codecademy-logo:hover {
     background: url(../images/codecademy-logo-hover.png) no-repeat;
     background-size: auto 24px;
-    background-position: center; 
+    background-position: center;
 }
 
 #tehactivities .ka-logo {
@@ -533,7 +513,7 @@ footer h2 a:visited {
 }
 
 /* project pictures smaller on portrait mobile devices */
-@media all and (min-width: 25em /* 400px */) { 
+@media all and (min-width: 25em /* 400px */) {
     .project-summary img {
         margin: .5em 0 0 .5em;
         padding: .25em;
@@ -549,11 +529,11 @@ footer h2 a:visited {
     header {
         height: 7em;
     }
-    
+
     header h1 {
         text-align: left;
     }
-    
+
     header #contact {
         float: right;
         font-size: 2.5em;
@@ -565,7 +545,7 @@ footer h2 a:visited {
     header #contact li {
         display: inline;
         margin: 0;
-        
+
     }
 
     header #contact li a:link {
@@ -588,16 +568,16 @@ footer h2 a:visited {
         text-shadow: .15em .15em 5px #C50;
         margin: 0 5px 5px 0;
     }
-    
+
     nav #mi-activity {
         display: block;
     }
-    
+
     /* date column */
     #tehactivities td:nth-child(2) {
         min-width: 110px;
     }
-    
+
     footer {
         margin: -8em 0 0 0;
     }
@@ -607,7 +587,7 @@ footer h2 a:visited {
     body {
         background: url(../images/binary.png);
     }
-    
+
     #wrap {
         background: #FEFEFE;
         border-left: 1px solid #242424;
@@ -615,19 +595,19 @@ footer h2 a:visited {
         box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.18);
         width: 80vw;
     }
-    
+
     header {
         height: 8em;
     }
-    
+
     header #contact {
         font-size: 3em;
     }
-    
+
     #tehactivities {
         width: 75vw;
     }
-    
+
     footer {
         width: 80vw;
         margin: 0 auto;
@@ -645,7 +625,7 @@ footer h2 a:visited {
         float: left;
         width: 50vw;
     }
-    
+
     #summary #project-summaries:last-of-type {
         margin-bottom: 5em;
     }
