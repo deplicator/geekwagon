@@ -1,409 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head prefix="og: http://ogp.me/ns#">
+<html lang="en">
+<head>
     <title>James Pryor's Personal Site</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal projects and other adventures of James.">
     <meta name="google-site-verification" content="zbf_AZ2WITDTSvGVXDwBxbIwg0JVNmPrWCsIW6hWm9A">
-    
+
     <meta property="og:title" content="James Pryor's Personal Web Site">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://geekwagon.net/">
     <meta property="og:image" content="http://geekwagon.net/images/ogimg.jpg">
     <meta property="og:description" content="Personal projects and other adventures of James.">
-    
-    <link rel="stylesheet" href="css/default.css">
-    <script src="libs/jquery-1.10.2.min.js"></script>
-    <script src="libs/underscore-1.5.2.min.js"></script>
-    <script src="libs/marked.js"></script><!--https://github.com/chjj/marked/-->
-    <script src="libs/analytics.js"></script>
+
+    <link rel="stylesheet" href="css/poole.min.css">
+    <!--<link rel="stylesheet" href="css/milligram.min.css">-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/analytics.js"></script>
+    <script src="js/jquery/jquery-2.2.0.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <div id="wrap">
-        <header>
-            <h1><a href="http://jamespryor.net">james pryor</a></h1>
-            <ul id="contact">
-                <li>
-                    <a class="ion-ios7-email-outline"
-                       title="Email is one of the best ways to contact me."
-                       href="mailto:james@geekwagon.net"></a>
-                </li>
-                <li>
-                    <a class="ion-social-facebook-outline"
-                       href="https://www.facebook.com/deplicator"></a>
-                </li>
-                <li>
-                    <a class="ion-social-github-outline"
-                       title="I don't always put Facebook before GitHub, but when I do it's because 
-                              they're in alphabetical order."
-                       href="https://github.com/deplicator"></a>
-                </li>
-                <li>
-                    <a class="ion-social-googleplus-outline"
-                       href="https://plus.google.com/100479632575151546186?rel=author"></a>
-                </li>
-                <li>
-                    <a class="ion-social-linkedin-outline"
-                       href="https://www.linkedin.com/in/pryorjames">
-                    </a>
-                </li>
-                <li>
-                    <a class="ion-social-rss-outline" href="http://blog.geekwagon.net"></a>
-                </li>
-            </ul>
-        </header>
-        <nav>
-            <ul>
-                <li class="menu-item selected" id="mi-summary">Summary</li>
-                <li class="menu-item mobile-hidden" id="mi-activity">Activity</li>
-                <!--<li class="menu-item" id="mi-projects">Projects</li>-->
-                <!--<li class="menu-item" id="mi-blog">Blog</li>-->
-                <li class="menu-item" id="mi-resume">R&eacute;sum&eacute;</li>
-            </ul>
-        </nav>
-        
-        <div class="page" id="summary">
-            
-            <section id="latest-activity">
-                <h2 descr="Click to see all activity!"><a href="#activity">Latest Activity</a></h2>
-                <!-- recent activity gets inserted here -->
-            </section>
-            
-            <section id="project-summaries">
-                <h2>Personal Projects</h2>
-                
-                <div class="project-summary" href="http://blog.geekwagon.net/2014/07/my-first-wildstar-addon-kaels-housing.html">
-                    <h3>Kael's Housing Tour - WildStar Addon</h3>
-                    <div>
-                        <img src="http://geekwagon.net/projects/HousingTour/khtss2.png" width="210">
-                        <p>
-                            WildStar's interface leaves plenty of room for improvement. This project
-                            makes it easier to navigate public properties in the game.
-                        </p>
-                        <span class="tools">Lua</span>
-                        <span class="tools">Apollo</span>
-                    </div>
-                </div>
-                
-                <div class="project-summary" href="http://geekwagon.net/projects/u7pp/">
-                    <h3>Ultima VII Party Planner</h3>
-                    <div>
-                        <img src="./images/u7pp.jpg" width="210">
-                        <p>
-                            A beautifully useless web application I made to learn backbone.js.
-                        </p>
-                        <span class="tools">jQuery</span>
-                        <span class="tools">underscore.js</span>
-                        <span class="tools">backbone.js</span>
-                    </div>
-                </div>
-                
-                <div class="project-summary" href="http://geekwagon.net/projects/comp2003/project/">
-                    <h3>PVAMU Computer Science Department</h3>
-                    <div>
-                        <img src="./images/project-csdepartment.jpg" width="210">
-                        <p>
-                            A school project to remake an existing website. Another student and I 
-                            took on the school's Computer Science Department site.
-                        </p>
-                        <span class="tools">jQuery</span>
-                    </div>
-                </div>
-                <div class="project-summary" href="http://geekwagon.net/projects/xkcd1190">
-                    <h3>xkcd Time - at your own pace</h3>
-                    <div>
-                        <img src="images/ayop.jpg" width="210">
-                        <p>
-                            The most popular thing I've ever done on the Internet. This site gathers
-                            the frames from the xkcd comic Time and presents them in an easy to use 
-                            scroll wheel fashion.
-                        </p>
-                        <p>
-                            The ultimate complement was an email from xkcd's creator, Randal Monroe,
-                            letting me know he found this tool easier to navigate his comic over his
-                            own. When the official comic ended it links to this project.
-                        </p>
-                        <p>
-                            This was also the first work I've done with others. I started it, but
-                            through github others contributed--an all around exciting experience.
-                        </p>
-                        <span class="tools">jQuery</span>
-                    </div>
-                </div>
-                <div class="project-summary" href="http://geekwagon.net/projects/eistreamer/">
-                    <h3>The Engines of Our Ingenuity Streamer</h3>
-                    <div>
-                        <img src="./images/eistreamerpic.jpg" width="210px">
-                        <p>
-                            Looking back on this over a year later, I'm surprised it still works. It
-                            scrapes UH's Engine's website to present the transcript and audio for 
-                            each episode in an easier to use format.
-                        </p>
-                        <p>
-                            This project was done with the consent of the University of Houston and
-                            Dr. John Lienhard.
-                        </p>
-                        <span class="tools">jQuery</span>
-                    </div>
-                </div>
-                
-                
-            </section>
+    <!-- Main View -->
+    <div class="container content">
 
-        </div><!--summary-->
-        
-        <div class="page" id="activity">
-            <h2>All Activity</h2>
-            <table id="tehactivities">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>When</th>
-                        <th>What</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div><!--activity-->
-        
-        <div class="page" id="blog">
-            <!-- display the latest blog posts... someday -->
-            
-        </div><!--blog-->
-        
-        <div class="page" id="resume">
-            <div class="page-submenu">
-                <span class="mobile-hidden">
-                    <!--<a href="resume/index.html">printable</a> | -->
-                    <a href="resume/pryor-resume.pdf">pdf</a> | 
-                    <a href="resume/pryor-resume.txt">markdown</a>
-                </span>
-                <ul id="resume-length">
-                    <li id="dr-brief" title="Fits in a tweat!">
-                        <div class="ion-chatbubble-working"></div>
-                        In a Tweet
-                    </li>
-                    <li id="dr-standard" class="active">
-                        <div class="ion-document-text"></div>
-                        Single Page
-                    </li>
-                    <li id="dr-story">
-                        <div class="ion-android-book"></div>
-                        Full History
-                    </li>
-                </ul>
-            </div>
-            <section id="resume-content"></section>
-        </div><!--resume-->
-        
-        <div class="page" id="why">
-            <h2>Why geekwagon.net?</h2>
-            <p>
-                Like many geeks that tinker there was a time in my life I <em>needed</em> a domain. 
-                Maybe I wanted a forum for some video game, <a title="who didn't?">I thought I'd get 
-                rich from web advertisements</a>, or maybe I thought I'd make it as a web designer.
-            </p>
-            <p>
-                When I purchased this domain <a title="silver Twinkie">I was living in a travel 
-                trailer</a>, an <a href="https://www.google.com/search?q=airstream">Airstream</a>. 
-                It was a neat way of life that I was able to pull off for about six years. 
-                <a title="and my wifi network">I fondly refereed to my home as the geek wagon</a>.
-            </p>
-            <p>
-                <a title="and can't give up these stupid title jokes">I've since remade it into a 
-                vanity/portfolio site</a>, and set up 
-                <a title="jamespryor.com was taken by a photographer, he's pretty good.">
-                jamespryor.net as a mirror</a>. I continue to use it as a place to test new ideas. 
-                The source for this site is available on 
-                <a href="https://github.com/deplicator/geekwagon">github</a>. For a long time I had
-                a rule that everything on this site was coded by hand, no libraries or frameworks.
-                Then I decided I wanted something cross-browser friendly that didn't take all my 
-                free time to develop. I use some third party resources, but I keep them limited.
-            </p>
-            <ul>
-                <li>
-                    <a href="http://jquery.com/"
-                       title="So many sites use this now, I just wanted to fit in.">jQuery</a>
-                    - It is the external library of choice!
-                </li>
-                <li>
-                    <a href="http://underscorejs.org/">Underscore.js</a>
-                    - For its simple template system.</li>
-                <li>
-                    <a href="http://ionicons.com/">Ionicons</a>
-                    - Way better than what I would have done with msPaint.
-                </li>
-                <li>
-                    <a href="https://github.com/chjj/marked">marked.js</a> - For markdown parsing, 
-                    <a title="Do not hold your breath.">until I write my own...</a>
-                </li>
-            </ul>
-        </div><!--why-->
-        
-    </div><!--wrapper-->
-    
-    <footer>
-        <h2 descr="why geekwagon.net"><a href="#why">&lt;geekwagon.net /&gt;</a></h2>
-    </footer>
-    
-    <script src="scripts/main.js"></script>
-    
-    <script type="text/html" id="summary-item">
-        <% if (activity.jsonObject !== null) { %>
-            <%
-                switch(activity.type) {
-                    case("github"):
-                        %><h3>Github</h3>
-                        <div class="date">
-                            <%= displayTime(parseInt(activity.activityTime + "000", 10)) %>
-                        </div><%
-                        switch(activity.jsonObject.type) {
-                            case("PushEvent"):
-                                %>
-                                <div class="description">Committed to 
-                                    <a href="<%= activity.jsonObject.repolink %>">
-                                    <%= activity.jsonObject.repo %></a>
-                                </div><%
-                                break;
-                            case("CreateEvent"):
-                                %>
-                                <div class="description">Created new repository named 
-                                    <a href="<%= activity.jsonObject.repolink %>">
-                                    <%= activity.jsonObject.repo %></a>
-                                </div><%
-                                break;
-                            case("WatchEvent"):
-                                %>
-                                <div class="description">Started watching repository named 
-                                    <a href="<%= activity.jsonObject.repolink %>">
-                                    <%= activity.jsonObject.repo %></a>
-                                </div><%
-                                break;
-                            default:
-                                %><div class="description">Unaccounted for Github event.</div><%
-                                break;
-                        }
-                        break;
-                    case("blog"):
-                        %><h3>Blog Post</h3>
-                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
-                        <div class="description"><a href="<%= activity.jsonObject.link %>"><%= activity.jsonObject.title %></a></div>
-                        <%
-                        break;
-                    case("codecademy"):
-                        %><h3>Codecademy</h3>
-                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
-                        <div class="description"><a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a></div>
-                        <%
-                        break;
-                    case("khanacademy"):
-                        %><h3>Khan Academy</h3>
-                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
-                        <div class="description"><a href="https://www.khanacademy.org/profile/deplicator/"><%= parseUnicodeString(activity.jsonObject.name) %></a></div>
-                        <%
-                        break;
-                    default:
-                        %><h3><%= activity.type %></h3>
-                        <div class="date"><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></div>
-                        <%
-                        break;
-                }
-            %>
-        <% } %>
+        <header class="masthead">
+            <h3 class="masthead-title">
+                <a href="#" class="cms_sitename" title="Home"></a>
+                <small class="cms_tagline"></small>
+            </h3>
+            <nav class="cms_nav"></nav>
+        </header>
+
+        <div class="cms_main"></div>
+
+        <footer class="cms_footer">
+            <small class="cms_footer_text"></small>
+        </footer>
+
+    </div>
+
+    <!-- Page View -->
+    <script id="page-template" type="x-template">
+        <article class="page">
+            <h1 class="page-title"></h1>
+            <div class="page-content"></div>
+        </article>
     </script>
-    
-    <script type="text/html" id="activity-item">
-        <% if (activity.jsonObject !== null) { %>
-        <tr>
-            <% 
-                switch(activity.type) {
-                    case("github"):
-                        switch(activity.jsonObject.type) {
-                            case("PushEvent"):
-                                %>
-                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
-                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                                <td>Made a commit to <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> repository on Github.<br>
-                                <em>Message: <%= activity.jsonObject.payload.commits[activity.jsonObject.payload.size - 1].message %></em></td>
-                                <%
-                                break;
-                            case("CreateEvent"):
-                                %>
-                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
-                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                                <td>Created new repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
-                                <em>Description: <%= activity.jsonObject.payload.description %></em></td>
-                                <%
-                                break;
-                            case("WatchEvent"):
-                                %>
-                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
-                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                                <td>Started watching a repository named <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
-                                </td>
-                                <%
-                                break;
-                            case("PullRequestEvent"):
-                                %>
-                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
-                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                                <td>Got a pull request on <a href="<%= activity.jsonObject.repolink %>">
-                                <%= activity.jsonObject.repo %></a> by <a href="<%= activity.jsonObject.payload.pull_request.user.html_url %>"><%= activity.jsonObject.payload.pull_request.user.login %></a> on Github.<br>
-                                <em>Description: <%= activity.jsonObject.payload.pull_request.title %>.</em></td>
-                                <%
-                                break;
-                            case("IssueCommentEvent"):
-                                %>
-                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
-                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                                <td>Made a comment on <a href="<%= activity.jsonObject.repolink %>"><%= activity.jsonObject.repo %></a> on Github.<br>
-                                <%
-                                break;
-                            default:
-                                %>
-                                <td><a class="ion-social-github" href="https://github.com/deplicator"></a></td>
-                                <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                                <td>Unaccounted for Github event</td>
-                                <%
-                                break;
-                        }
-                        break;
-                    case("blog"):
-                        %>
-                        <td><a class="ion-social-rss" href="https://blog.geekwagon.net"></a></td>
-                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                        <td>New blog post titled: <a href="<%= activity.jsonObject.link %>"><%= activity.jsonObject.title %></a>.<br>
-                        <em>Comments: <%= activity.jsonObject.comments %></em></td>
-                        <%
-                        break;
-                    case("codecademy"):
-                        %>
-                        <td class="codecademy-logo"></td>
-                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                        <td><img src="<%= activity.jsonObject.badge %>" height=32 alt="badge"/><p>Earned <a href="<%= activity.jsonObject.link %>"><%= parseUnicodeString(activity.jsonObject.name) %></a> on Codecademy.</p></td>
-                        <%
-                        break;
-                    case("khanacademy"):
-                        %>
-                        <td class="ka-logo"></td>
-                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                        <td><img src="<%= activity.jsonObject.icon %>" height=32 alt="badge"/><p>Earned <a href="<%= activity.jsonObject.badgelink %>" title="<%= activity.jsonObject.description %>"><%= parseUnicodeString(activity.jsonObject.name) %></a> on Khan Academy.</p></td>
-                        <%
-                        break;
-                    default:
-                        %>
-                        <td></td>
-                        <td><%= displayTime(parseInt(activity.activityTime + "000", 10)) %></td>
-                        <td>Unaccounted for event</td>
-                        break;
-                        <%
-                }
-            %>
-        </tr>
-        <% } %>
+
+    <!-- Post View -->
+    <script id="post-template" type="x-template">
+        <article class="post">
+            <h1 class="post-title"></h1>
+            <time class="post-date"></time>
+            <div class="post-content"></div>
+        </article>
     </script>
+
+    <!-- Error View -->
+    <script id="error-template" type="x-template">
+        <div class="error">
+            <b>Sorry, something went wrong :(</b>
+            <p class="error_text"></p>
+            <a href="#" class="close alert_close">&times;</a>
+        </div>
+    </script>
+
+    <script src="js/cms.js/marked.js"></script>
+    <script src="js/cms.js/cms.js"></script>
+    <script src="config.js"></script>
 
 </body>
 </html>
