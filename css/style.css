@@ -31,9 +31,19 @@ h6 a:hover {
 }
 
 /* page elements */
+body {
+    background-image: url(../images/M16_hubble_v2a_huge.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .container {
     max-width: 75rem;
-    border: 2px solid;
+}
+
+/* logo */
+.masthead-title {
+    margin: 0 0 1px 0;
 }
 
 .masthead small {
@@ -63,6 +73,22 @@ nav ul li a {
     font-size: 17px
 }
 
+/* contact */
+#contact {
+    font-size: 33px;
+    list-style: none;
+    padding: 0
+}
+
+#contact li {
+    display: inline;
+    padding-left: 10px
+}
+
 .cms_main {
     clear: both;
+}
+
+article.post {
+    background: rgba(240, 248, 255, 0.64);
 }
