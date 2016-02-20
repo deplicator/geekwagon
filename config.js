@@ -6,7 +6,7 @@ $(function() {
     siteName: 'James Pryor',
 
     // Tagline for your site
-    siteTagline: 'personal site',
+    siteTagline: '',
 
     // Email address
     siteEmail: 'james@geekwagon.net',
