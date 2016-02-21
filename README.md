@@ -1,11 +1,8 @@
 Files for my person site, geekwagon.net.
 
-Some Credit
------------
-- cmj.js
-- jquery
+See [this][1] for more details.
 
+All this mess is released under [an "awful" license][2].
 
-All this mess is released under [an "awful" license][1].
-
-[1]: http://geekwagon.net/ufl/ufl_version_2.0.txt
+[1]: http://geekwagon.net/#page/About
+[2]: http://geekwagon.net/ufl/ufl_version_2.0.txt
