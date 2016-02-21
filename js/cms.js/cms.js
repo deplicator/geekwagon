@@ -135,18 +135,23 @@ var CMS = {
   },
 
   renderPosts: function () {
-    CMS.posts.sort(function (a,b) { return CMS.settings.sortDateOrder ? b.date - a.date : a.date - b.date; });
-    CMS.posts.forEach(function (post){
-      var tpl = $('#post-template').html(),
-        $tpl = $(tpl);
+    CMS.posts.sort(function (a, b) {
+      return CMS.settings.sortDateOrder ? b.date - a.date : a.date - b.date;
+    });
 
-      var title = '<a href="#">' + post.title + '</a>',
-        date = (post.date.getMonth() + 1) + '/' + post.date.getDate() + '/' +  post.date.getFullYear(),
-        snippet = post.contentData.split('.')[0] + '.';
+    CMS.posts.forEach(function (post) {
+      var tpl = $('#post-template').html();
+      var $tpl = $(tpl);
 
-      var postLink = $tpl.find('.post-title'),
-        postDate = $tpl.find('.post-date'),
-        postSnippet = $tpl.find('.post-content');
+      var title = '<a href="#">' + post.title + '</a>';
+      var date = (post.date.getMonth() + 1) + '/' + post.date.getDate() + '/' +  post.date.getFullYear();
+      var regexp = /\s*<!--\s*more\s*-->/,
+      snippet = post.contentData.split(regexp)[0];
+
+
+      var postLink = $tpl.find('.post-title');
+      var postDate = $tpl.find('.post-date');
+      var postSnippet = $tpl.find('.post-content');
 
       postLink.on('click', function (e) {
         e.preventDefault();
@@ -194,38 +199,39 @@ var CMS = {
   },
 
   parseContent: function (content, type, file, counter, numFiles) {
-
-    var data = content.split(CMS.settings.parseSeperator),
-      contentObj = {},
-      id = counter,
-      date = file.date;
+    var data;
+    var contentObj = {};
+    var id = counter;
+    var date = file.date;
 
     contentObj.id = id;
     contentObj.date = date;
 
-    // Get content info
-    var infoData = data[1].split(/[\n\r]+/);
+    var yamlSeperation = /[\n\r]+---\s/.exec(content);
+    if(yamlSeperation !== null) {
+        data = content.substr(yamlSeperation.index + 5, content.length);
 
-    $.each(infoData, function (k, v) {
-      if (v.length) {
-        v.replace(/^\s+|\s+$/g, '').trim();
-        var i = v.split(':');
-        var val = v.slice(v.indexOf(':')+1);
-        k = i[0];
+        // Get content info
+        infoData = content.substr(3, yamlSeperation.index - 3).split(/[\n\r]+/);
 
-        val = (k == 'date' ? (new Date(val)) : val);
+        $.each(infoData, function (k, v) {
+          if (v.length) {
+            v.replace(/^\s+|\s+$/g, '').trim();
+            var i = v.split(':');
+            var val = v.slice(v.indexOf(':')+1);
+            k = i[0];
 
-        contentObj[k] = (val.trim ? val.trim() : val);
-      }
-    });
+            val = (k == 'date' ? (new Date(val)) : val);
 
-    // Drop stuff we dont need
-    data.splice(0,2);
+            contentObj[k] = (val.trim ? val.trim() : val);
+          }
+        });
 
-    // Put everything back together if broken
-    var contentData = data.join();
-    contentObj.contentData = marked(contentData);
+    } else {
+        data = content;
+    }
 
+    contentObj.contentData = marked(data);
 
     if (type == 'post') {
       CMS.posts.push(contentObj);
@@ -439,4 +445,3 @@ var CMS = {
   }
 
 };
-

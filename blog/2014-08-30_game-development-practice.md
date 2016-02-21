@@ -74,6 +74,6 @@ These two changes give players some deciding power on tokens going out and comin
 Unlike the real assignment I haven't been able to do any play testing (the number of people I know
 willing to play table top games is sad).
 
-[pic-1]: ../images/LCR_Tubes.jpg "LCR Tubes with less fun instructions inside."
+[pic-1]: images/LCR_Tubes.jpg "LCR Tubes with less fun instructions inside."
 [link-1]: https://ericzimmerman.wordpress.com/2014/08/11/how-i-teach-game-design-lesson-2-broken-games-and-meaningful-play/
 [link-2]: https://en.wikipedia.org/wiki/LCR_(dice_game)

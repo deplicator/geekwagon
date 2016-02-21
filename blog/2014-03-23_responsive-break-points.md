@@ -59,9 +59,9 @@ behind geekwagon.net.
 Now all I need to do is spend some time refining the code that makes my blog! I know how horrible it
 is.
 
-[pic-1]: ../images/325px.jpg "geekwagon at 325px"
-[pic-2]: ../images/640px.jpg "geekwagon at 640px"
-[pic-3]: ../images/960px.jpg "geekwagon at 960px"
-[pic-4]: ../images/1100ishpx.jpg "geekwagon at 1100-ish px"
+[pic-1]: images/325px.jpg "geekwagon at 325px"
+[pic-2]: images/640px.jpg "geekwagon at 640px"
+[pic-3]: images/960px.jpg "geekwagon at 960px"
+[pic-4]: images/1100ishpx.jpg "geekwagon at 1100-ish px"
 [link-1]: http://getbootstrap.com/
 [link-2]: http://geekwagon.net/#why

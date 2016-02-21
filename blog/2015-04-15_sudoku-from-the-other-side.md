@@ -34,4 +34,4 @@ never finish.
 
 [link1]: http://geekwagon.net/projects/sudoku/
 [link2]: https://github.com/einaregilsson/sudoku.js
-[picture1]: ../images/IMG_20150424_140251.jpg "I play in pen because I'm a glutton for punishment."
+[picture1]: images/IMG_20150424_140251.jpg "I play in pen because I'm a glutton for punishment."

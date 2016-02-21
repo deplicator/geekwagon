@@ -102,6 +102,6 @@ settings.
 [link-2]: https://techjourney.net/disable-or-uninstall-onedrive-completely-in-windows-10/
 [link-3]: http://www.howtogeek.com/222057/how-to-remove-the-folders-from-%E2%80%9Cthis-pc%E2%80%9D-on-windows-10/
 [link-4]: http://www.tenforums.com/tutorials/7948-volume-control-old-new-windows-10-a.html
-[pic-1]: ../images/regeditfun.png "You know you love it."
-[pic-2]: ../images/regeditfun2.png "Of course, it was in AppXf4ry1xaj6j9nm2m6g08zm9mkyq88zjpc the whole time."
-[pic-3]: ../images/regeditfun3.png "It's like they don't trust me to keep up with my own stuff."
+[pic-1]: images/regeditfun.png "You know you love it."
+[pic-2]: images/regeditfun2.png "Of course, it was in AppXf4ry1xaj6j9nm2m6g08zm9mkyq88zjpc the whole time."
+[pic-3]: images/regeditfun3.png "It's like they don't trust me to keep up with my own stuff."

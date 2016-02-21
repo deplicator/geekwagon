@@ -70,7 +70,7 @@ than the old fashion way. It made me appreciate the `render()` method.
 _I'm still working on this project from time to time, and I don't think this post will be spared
 from editing either._
 
-[pic-1]: ../images/u7pp.jpg "Menion makes out like a bandit."
+[pic-1]: images/u7pp.jpg "Menion makes out like a bandit."
 [link-1]: http://backbonejs.org/
 [link-2]: http://geekwagon.net/projects/u7pp/
 [link-3]: https://github.com/deplicator/U7PartyPlanner

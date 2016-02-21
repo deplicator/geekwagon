@@ -3,10 +3,9 @@ layout: default
 title: About
 ---
 
-Hello! This is my awesome about page! Check out some cool links:
+I used to have this crazy idea this page should be coded the hard way with no outside libraries.
+That worked well enough, but now it is a place to play with libraries and frameworks. Here are some
+in use right now.
 
-* [Smashing Magazine](https://www.smashingmagazine.com)
-* [TechCrunch](http://techcrunch.com/)
-* [Ars Technica](http://arstechnica.com/)
-* [Codoki](http://codoki.com/)
-* [Mozilla Javascipt](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [CMJ.js](https://github.com/cdmedia/cms.js)
+* [Milligram](https://milligram.github.io/)

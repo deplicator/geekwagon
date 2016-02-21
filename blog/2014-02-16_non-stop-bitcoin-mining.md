@@ -55,7 +55,7 @@ needed a -d for detach. The new script is in the [gist][link-7], it's been teste
 well.
 
 
-[pic-1]: ../images/itmines.jpg "Screen shot of the log file, how interesting and inefficient."
+[pic-1]: images/itmines.jpg "Screen shot of the log file, how interesting and inefficient."
 [link-1]: http://btcguild.com/
 [link-2]: http://www.teamviewer.com/en/index.aspx
 [link-3]: http://bitcoin.stackexchange.com/a/117

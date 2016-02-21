@@ -52,7 +52,7 @@ look. I think that would be better. I don't have a need for that right now thoug
 surprised if it doesn't happen.
 
 
-[pic-1]: ../images/jquery-filetree-mine.png "My lame file tree."
-[pic-2]: ../images/jquery-filetree-theirs.png "jQueryFileTree's default."
+[pic-1]: images/jquery-filetree-mine.png "My lame file tree."
+[pic-2]: images/jquery-filetree-theirs.png "jQueryFileTree's default."
 [link-1]: http://www.abeautifulsite.net/jquery-file-tree/
 [link-2]: https://github.com/deplicator/jQueryFileTree

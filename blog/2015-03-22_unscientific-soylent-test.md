@@ -70,5 +70,5 @@ Short list of things I tried to flavor Soylent with an opinion:
 * Four double stuffed Oreos per 1/6 bag: expectations where high but not bad (had to be tried--ridiculous amount of calories for the volume)
 
 
-[picture-1]: ../images/IMG_0762-Version-2.jpg "I'm not a fan of the name, but I cannot knock them on professional packaging."
+[picture-1]: images/IMG_0762-Version-2.jpg "I'm not a fan of the name, but I cannot knock them on professional packaging."
 [link-1]: http://lmgtfy.com/?q=soylent

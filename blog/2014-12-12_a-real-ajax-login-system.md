@@ -78,7 +78,7 @@ That's my two cents on security.
 I plan to add more to this in the future. Feedback is appreciated, as always. :)
 
 
-[picture-1]: ../images/ajaxlogin.jpg "Dashed borders let you know this is hard core web design."
+[picture-1]: images/ajaxlogin.jpg "Dashed borders let you know this is hard core web design."
 [link-1]: http://geekwagon.net/projects/real-ajax-login/login.html
 [link-2]: https://github.com/deplicator/real-ajax-login
 [link-3]: http://www.9lessons.info/2014/07/ajax-php-login-page.html

@@ -47,7 +47,7 @@ For example; if you go nuts with the rotate key and left/right arrows at the sam
 a piece apart. Especially weird stuff can happen at the edge of the screen. After that I'd like to
 start making some serious changes, like make it more than another Tetris clone.
 
-[pic-1]: ../images/2014-06-15at8.00.34PM.png "Someone sucks at Tetris."
+[pic-1]: images/2014-06-15at8.00.34PM.png "Someone sucks at Tetris."
 [link-1]: http://geekwagon.net/projects/flipsy/
 [link-2]: http://tetris.wikia.com/wiki/Tetris_Guideline
 [link-3]: http://phaser.io/

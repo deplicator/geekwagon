@@ -137,7 +137,7 @@ will output this object and you'll be able to see there are more url's available
 information. You could, for example, make a call to `api.github.com/user` to get the value for the
 key `repos_url`, then use that url to list the users repositories.
 
-[pic-1]: ../images/IMG_20150829_122938.jpg "OAuth can be daunting"
+[pic-1]: images/IMG_20150829_122938.jpg "OAuth can be daunting"
 [link-1]: https://en.wikipedia.org/wiki/OAuth
 [link-2]: http://geekwagon.net/projects/github-oauth-demo/
 [link-3]: https://developer.github.com/v3/oauth/

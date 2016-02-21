@@ -46,7 +46,7 @@ my notes for almost every day. I'm happy to share it, but these [are just notes 
 (nothing juicy). They're in markdown, but I only ever view them in a text editor so it might not be
 perfect markdown.
 
-[pic-1]: ../images/khtss.png "Hard to see, but there is a handsome warrior with new PvP gear in this picture."
+[pic-1]: images/khtss.png "Hard to see, but there is a handsome warrior with new PvP gear in this picture."
 [link-1]: https://github.com/deplicator/HousingTour
 [link-2]: http://www.curse.com/ws-addons/wildstar/222538-kaels-housing-tour
 [link-3]: http://geekwagon.net/projects/HousingTour/2014-06-26_notes.md
