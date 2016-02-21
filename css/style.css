@@ -2,6 +2,10 @@
 @import url(ionicons.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic);
 
+body {
+    min-width: 285px;
+}
+
 /* most links */
 a {
     color: #CC5500;
@@ -10,6 +14,12 @@ a {
 a:hover {
     color: #CC5500;
     text-decoration: underline;
+}
+
+h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
 /* headers and their links */
@@ -28,22 +38,38 @@ h5 a:hover,
 h6 a:hover {
     color: #515151;
     text-decoration: none;
+    transition: all 0.4s ease;
 }
 
 /* page elements */
 body {
-    background-image: url(../images/M16_hubble_v2a_huge.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50vw;
+    max-height: 50vh;
+    border: 1px solid #ccc;
+    padding: 3px;
+    border-radius: 4px;
 }
 
 .container {
     max-width: 75rem;
 }
 
+
 /* logo */
 .masthead-title {
+    color: rgba(255, 96, 33, 0.97);
+    float: left;
     margin: 0 0 1px 0;
+}
+
+.masthead-title a {
+    color: inherit;
 }
 
 .masthead small {
@@ -53,10 +79,41 @@ body {
     letter-spacing: 0
 }
 
+/* contact */
+#contact {
+    clear: both;
+    float: left;
+    font-size: 33px;
+    list-style: none;
+    margin: -24px 0 0 13px;
+    padding: 0
+}
+
+#contact li {
+    display: inline;
+    padding-left: 10px
+}
+
+#contact li a:link {
+    border-radius: 11px;
+    text-shadow: .05em .05em 3px rgba(204, 85, 0, 0.5);
+    padding: 0 8px;
+    margin: 5px 0 0 5px;
+    height: 50px;
+    float: left;
+    transition: all 0.2s ease;
+}
+
+#contact li a:hover {
+    text-decoration: none;
+    text-shadow: .15em .15em 5px rgba(204, 85, 0, 0.5);
+    margin: 0 5px 5px 0;
+}
+
 /* navigation */
 nav {
-    display: block;
-    float: right
+    float: right;
+    margin: -8px 0 0 0;
 }
 
 nav ul {
@@ -73,22 +130,66 @@ nav ul li a {
     font-size: 17px
 }
 
-/* contact */
-#contact {
-    font-size: 33px;
-    list-style: none;
-    padding: 0
-}
 
-#contact li {
-    display: inline;
-    padding-left: 10px
-}
 
 .cms_main {
     clear: both;
 }
 
-article.post {
-    background: rgba(240, 248, 255, 0.64);
+.post {
+    background: rgba(0, 0, 255, 0.05);
+    border-radius: 23px;
+    margin: 0 0 10px 0;
+    padding: 10px;
+
+}
+
+.post h3 {
+    font-size: 3rem;
+}
+
+article .post-content {
+    margin: 15px 0 0 0;
+}
+
+@media (max-width: 40rem) {
+    .masthead-title {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    #contact {
+        clear: none;
+        float: none;
+        font-size: 33px;
+        list-style: none;
+        margin: -17px auto 0;
+        width: 230px;
+    }
+
+    #contact li {
+        padding: 0;
+    }
+
+    #contact li a:link {
+        text-shadow: .05em .05em 3px rgba(204, 85, 0, 0.5);
+        padding: 0 8px;
+        height: 50px;
+        transition: all 0.2s ease;
+    }
+
+    #contact li a:hover {
+        color: #FF6D05;
+        text-decoration: none;
+        text-shadow: .05em .05em 6px rgba(255, 106, 0, 0.75);
+    }
+
+    nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+clear: both;
+    }
 }

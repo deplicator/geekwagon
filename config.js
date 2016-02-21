@@ -16,7 +16,6 @@ $(function() {
 
     // Navigation items
     siteNavItems: [
-      {name: 'Github', href: 'https://github.com/deplicator', newWindow: false},
       {name: 'Blog',  href: '#', newWindow: false},
       {name: 'About'}
     ],
@@ -37,7 +36,7 @@ $(function() {
     fadeSpeed: 300,
 
     // Site footer text
-    footerText: '<a href="">Why?</a>',
+    footerText: '',
 
     // Mode 'Github' for Github Pages, 'Apache' for Apache server. Defaults
     // to Github
