@@ -56,6 +56,10 @@ img {
     border-radius: 4px;
 }
 
+hr {
+    border-width: 1px;
+}
+
 .container {
     max-width: 75rem;
 }

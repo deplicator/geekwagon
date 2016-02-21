@@ -1,3 +1,13 @@
+---
+layout: resume
+title: Resume
+---
+
+I'll fix how this renders later. Please bare with me I'm making a lot of changes to how this site
+works.
+
+---------------------------------------------------------------------------------------------------
+
 <!-- Resume in markdown best viewed with fixed width font or parsed to html. -->
 
 James Pryor

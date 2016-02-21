@@ -17,6 +17,7 @@ $(function() {
     // Navigation items
     siteNavItems: [
       {name: 'Blog',  href: '#', newWindow: false},
+      {name: 'Resume'},
       {name: 'About'}
     ],
 
