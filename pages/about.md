@@ -19,3 +19,5 @@ regularly to show off.
 * [2015 Tax Slider](http://deplicator.github.io/tax-slider/)
 * [Sudoku Experiment](http://geekwagon.net/projects/sudoku/)
 * [Tetris Clone](http://geekwagon.net/projects/flipsy/)
+
+* [older blog posts](http://blog.geekwagon.net/)

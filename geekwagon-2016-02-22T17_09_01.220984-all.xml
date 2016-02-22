@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<disqus xmlns="http://disqus.com" xmlns:dsq="http://disqus.com/disqus-internals" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://disqus.com/api/schemas/1.0/disqus.xsd http://disqus.com/api/schemas/1.0/disqus-internals.xsd">
+<category dsq:id="3848270">
+<forum>geekwagon</forum>
+<title>General</title>
+<isDefault>true</isDefault>
+</category>
+<thread dsq:id="3950511173">
+<id>blog/how-i-work</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/how-i-work/index.html</link>
+<title>blog/how-i-work</title>
+<message />
+<createdAt>2015-07-19T21:19:04Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="3950517710">
+<id>blog/first-post</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/first-post/index.html</link>
+<title>blog/first-post</title>
+<message />
+<createdAt>2015-07-19T21:21:59Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>true</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="3950630067">
+<id>blog/another-post</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/another-post/index.html</link>
+<title>blog/another-post</title>
+<message />
+<createdAt>2015-07-19T22:14:54Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="3954459828">
+<id>blog/sudoku-from-the-other-side</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/sudoku-from-the-other-side/index.html</link>
+<title>blog/sudoku-from-the-other-side</title>
+<message />
+<createdAt>2015-07-21T01:47:45Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="3973931733">
+<id>blog/tax-sliding</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/tax-sliding/index.html</link>
+<title>blog/tax-sliding</title>
+<message />
+<createdAt>2015-07-26T23:04:09Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4015061241">
+<id>blog/james-complains-about-windows-10</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/james-complains-about-windows-10/index.html</link>
+<title>blog/james-complains-about-windows-10</title>
+<message />
+<createdAt>2015-08-08T18:00:18Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4015734334">
+<id />
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/metalsmith-resume/build/myResume.html</link>
+<title>My Resume</title>
+<message />
+<createdAt>2015-08-09T00:21:30Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4023569556">
+<id>blog/unscientific-soylent-test</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/unscientific-soylent-test/index.html</link>
+<title>blog/unscientific-soylent-test</title>
+<message />
+<createdAt>2015-08-11T18:20:02Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4026153819">
+<id>blog/some-backup-scripts</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/some-backup-scripts/index.html</link>
+<title>blog/some-backup-scripts</title>
+<message />
+<createdAt>2015-08-12T15:31:34Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4026229574">
+<id>blog/a-real-ajax-login-system</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://deplicator.github.io/blog/a-real-ajax-login-system/index.html</link>
+<title>blog/a-real-ajax-login-system</title>
+<message />
+<createdAt>2015-08-12T15:59:48Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4078763335">
+<id>blog/jquery-filetree-an-old-plugin</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/jquery-filetree-an-old-plugin/index.html</link>
+<title>blog/jquery-filetree-an-old-plugin</title>
+<message />
+<createdAt>2015-08-29T18:13:00Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4078817831">
+<id>blog/understanding-oauth</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/understanding-oauth/index.html</link>
+<title>blog/understanding-oauth</title>
+<message />
+<createdAt>2015-08-29T18:38:11Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4079273644">
+<id>blog/steal-these-ideas</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/steal-these-ideas/index.html</link>
+<title>blog/steal-these-ideas</title>
+<message />
+<createdAt>2015-08-29T22:19:43Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4079298500">
+<id>blog/game-development-practice</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/game-development-practice/index.html</link>
+<title>blog/game-development-practice</title>
+<message />
+<createdAt>2015-08-29T22:33:32Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4079321706">
+<id>blog/my-first-wildstar-addon-kael-s-housing-tour</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/my-first-wildstar-addon-kael-s-housing-tour/index.html</link>
+<title>blog/my-first-wildstar-addon-kael-s-housing-tour</title>
+<message />
+<createdAt>2015-08-29T22:47:11Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4081158014">
+<id>blog/just-another-tetris-clone</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/just-another-tetris-clone/index.html</link>
+<title>blog/just-another-tetris-clone</title>
+<message />
+<createdAt>2015-08-30T15:49:28Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4081200826">
+<id>blog/damn-you-avat-i-mean-carbine</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/damn-you-avat-i-mean-carbine/index.html</link>
+<title>blog/damn-you-avat-i-mean-carbine</title>
+<message />
+<createdAt>2015-08-30T16:07:32Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4081234623">
+<id>blog/habits</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/habits/index.html</link>
+<title>blog/habits</title>
+<message />
+<createdAt>2015-08-30T16:22:33Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4081265719">
+<id>blog/responsive-break-points</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/responsive-break-points/index.html</link>
+<title>blog/responsive-break-points</title>
+<message />
+<createdAt>2015-08-30T16:35:55Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4081314875">
+<id>blog/non-stop-bitcoin-mining</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/non-stop-bitcoin-mining/index.html</link>
+<title>blog/non-stop-bitcoin-mining</title>
+<message />
+<createdAt>2015-08-30T16:57:24Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4081371069">
+<id>blog/ultima-vii-party-planner</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/ultima-vii-party-planner/index.html</link>
+<title>blog/ultima-vii-party-planner</title>
+<message />
+<createdAt>2015-08-30T17:22:24Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4395683901">
+<id>blog/why-does-windows-10-require-so-much-registry-hacking</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/why-does-windows-10-require-so-much-registry-hacking/index.html</link>
+<title>blog/why-does-windows-10-require-so-much-registry-hacking</title>
+<message />
+<createdAt>2015-12-11T18:13:16Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4395684605">
+<id>blog/windows-10-registry-hacking</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/windows-10-registry-hacking/index.html</link>
+<title>blog/windows-10-registry-hacking</title>
+<message />
+<createdAt>2015-12-11T18:13:35Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4464206712">
+<id>blog/how-to-live-above-your-means</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/sandbox/deplicator.github.io/blog/how-to-live-above-your-means/index.html</link>
+<title>blog/how-to-live-above-your-means</title>
+<message />
+<createdAt>2016-01-05T17:14:24Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="4599965681">
+<id>blog/i-love-rsnapshot</id>
+<forum>geekwagon</forum>
+<category dsq:id="3848270" />
+<link>http://homeserver/dev/geekwagon/</link>
+<title>                James Pryor                            </title>
+<message />
+<createdAt>2016-02-22T03:45:30Z</createdAt>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<post dsq:id="2159741434">
+<id />
+<message><![CDATA[<p>THANK YOU SO MUCH. LIFESAVER. asdf23r 13r13r13 13r 3</p>]]></message>
+<createdAt>2015-07-27T18:18:10Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<email>m00sedog00@tamu.edu</email>
+<name>George Gaytan</name>
+<isAnonymous>false</isAnonymous>
+<username>georgegaytan</username>
+</author>
+<ipAddress>15.203.233.84</ipAddress>
+<thread dsq:id="3973931733" />
+</post>
+<post dsq:id="2527685507">
+<id />
+<message><![CDATA[<p>wut</p>]]></message>
+<createdAt>2016-02-22T04:46:32Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<email>james@geekwagon.net</email>
+<name>deplicator</name>
+<isAnonymous>false</isAnonymous>
+<username>deplicator</username>
+</author>
+<ipAddress>23.119.170.196</ipAddress>
+<thread dsq:id="4599965681" />
+</post>
+</disqus>

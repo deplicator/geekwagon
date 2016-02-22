@@ -6,6 +6,8 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
+
+
 var CMS = {
 
   settings: {
@@ -120,15 +122,26 @@ var CMS = {
   renderPost: function (id) {
     CMS.posts.forEach(function (post){
       if (post.id == id) {
-
-        var tpl = $('#post-template').html(),
-          $tpl = $(tpl);
+          console.log('renderPost', id)
+        tpl = $('#post-template').html();
+        $tpl = $(tpl);
 
         $tpl.find('.post-title').html(post.title);
         $tpl.find('.post-date').html((post.date.getMonth() + 1) + '/' + post.date.getDate() + '/' +  post.date.getFullYear());
         $tpl.find('.post-content').html(post.contentData);
+        $tpl.find('#disqus_thread').show();
+        config = {
+            shortname:  "localtest24",
+            title:      post.title,
+            identifier: post.comments,
+            url:        window.location.href,
+            developer: true
+        };
+
+
 
         CMS.settings.mainContainer.html($tpl).hide().fadeIn(CMS.settings.fadeSpeed);
+        enableDisqus(config);
       }
     });
     CMS.renderFooter();
@@ -142,6 +155,7 @@ var CMS = {
     CMS.posts.forEach(function (post) {
       var tpl = $('#post-template').html();
       var $tpl = $(tpl);
+      $tpl.find('#disqus_thread').hide();
 
       var title = '<a href="#">' + post.title + '</a>';
       var date = (post.date.getMonth() + 1) + '/' + post.date.getDate() + '/' +  post.date.getFullYear();
@@ -200,7 +214,7 @@ var CMS = {
 
   parseContent: function (content, type, file, counter, numFiles) {
     var data;
-    var contentObj = {};
+    contentObj = {};
     var id = counter;
     var date = file.date;
 
@@ -223,8 +237,15 @@ var CMS = {
 
             val = (k == 'date' ? (new Date(val)) : val);
 
+            // To create a link for disqus comments.
+            if(k === 'title') {
+              contentObj['comments'] = 'blog/' + val.trim().replace(/\s/g,'-').toLowerCase();
+            }
+
             contentObj[k] = (val.trim ? val.trim() : val);
           }
+
+
         });
 
     } else {
@@ -248,6 +269,7 @@ var CMS = {
   getContent: function (type, file, counter, numFiles) {
 
     var urlFolder = '';
+    var url = '';
 
     switch(type) {
       case 'post':

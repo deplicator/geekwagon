@@ -150,7 +150,7 @@ echo $foo >> /home/james/rsnapshot-du-results.csv
 
 It returns only the space used in a single line separated by commas.
 
-![overview][p2]
+![The numbers][p2]
 
 ### The Future
 
@@ -170,4 +170,4 @@ snapshots is the way to go. I'll figure it out when I get there. Then I'll proba
 [3]: https://www.digitalocean.com/community/tutorials/how-to-install-rsnapshot-on-ubuntu-12-04
 [4]: http://www.cyberciti.biz/faq/linux-unix-apple-osx-bsd-rsync-copy-hard-links/
 [p1]: images/2016-02-20_overview.png "Made with love in MSPaint."
-[p2]: images/2016-02-20_spreedsheet.png "Up next, how to import a csv into gdrive automatically (not really)."
+[p2]: images/2016-02-20_spreadsheet.png "Up next, how to import a csv into gdrive automatically (not really)."
