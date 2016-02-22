@@ -134,7 +134,7 @@ var CMS = {
             shortname:  "localtest24",
             title:      post.title,
             identifier: post.comments,
-            url:        window.location.href,
+            url:        window.location.href.split('#')[0] + window.location.hash.slice(1),
             developer: true
         };
 
