@@ -131,7 +131,7 @@ var CMS = {
         $tpl.find('.post-content').html(post.contentData);
         $tpl.find('#disqus_thread').show();
         config = {
-            shortname:  "localtest24",
+            shortname:  "geekwagon",
             title:      post.title,
             identifier: post.comments,
             url:        window.location.href.split('#')[0] + window.location.hash.slice(1),
