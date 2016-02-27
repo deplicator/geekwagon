@@ -16,9 +16,9 @@ $(function() {
 
     // Navigation items
     siteNavItems: [
-      {name: 'Blog',  href: '#', newWindow: false},
-      {name: 'Resume'},
-      {name: 'About'}
+      {name: 'Blog',  href: '/', newWindow: false},
+      {name: 'Resume', href: 'http://deplicator.github.io', newWindow: false},
+      {name: 'About', href: '/?page=about', newWindow: false}
     ],
 
     // Posts folder name
