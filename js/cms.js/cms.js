@@ -6,6 +6,34 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
+function UpdateQueryString(key, value, url) {
+    if (!url) url = window.location.href;
+    var re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi");
+    var hash;
+
+    if (re.test(url)) {
+        if (typeof value !== 'undefined' && value !== null) {
+            return url.replace(re, '$1' + key + "=" + value + '$2$3');
+        } else {
+            hash = url.split('#');
+            url = hash[0].replace(re, '$1$3').replace(/(&|\?)$/, '');
+            if (typeof hash[1] !== 'undefined' && hash[1] !== null)
+            url += '#' + hash[1];
+            return url;
+        }
+    } else {
+        if (typeof value !== 'undefined' && value !== null) {
+            var separator = url.indexOf('?') !== -1 ? '&' : '?';
+            hash = url.split('#');
+            url = hash[0] + separator + key + '=' + value;
+            if (typeof hash[1] !== 'undefined' && hash[1] !== null)
+            url += '#' + hash[1];
+            return url;
+        } else {
+            return url;
+        }
+    }
+}
 
 
 var CMS = {
@@ -72,23 +100,24 @@ var CMS = {
     CMS.settings.mainContainer.html('').fadeOut(CMS.settings.fadeSpeed);
     CMS.settings.footerContainer.hide();
 
-    var type = url.split('/')[0];
+    type = url.substr(url.lastIndexOf('/'), 6);
+
     var map = {
 
       // Main view
-      '' : function () {
+      '/' : function () {
         CMS.renderPosts();
       },
 
       // Post view
-      '#post' : function () {
-        var id = url.split('#post/')[1].trim();
+      '/?post' : function () {
+        var id = url.split('?post=')[1].trim();
         CMS.renderPost(id);
       },
 
       // Page view
-      '#page' : function () {
-        var title = url.split('#page/')[1].trim();
+      '/?page' : function () {
+        var title = url.split('?page/')[1].trim();
         CMS.renderPage(title);
       }
 
@@ -169,7 +198,9 @@ var CMS = {
 
       postLink.on('click', function (e) {
         e.preventDefault();
-        window.location.hash = 'post/' + post.id;
+        window.location.href = UpdateQueryString('post', post.id);
+        $(window).trigger('hashchange');
+        //window.location.hash = 'post/' + post.id;
       });
 
       postLink.html(title);
@@ -454,7 +485,7 @@ var CMS = {
 
     // Check for hash changes
         $(window).on('hashchange', function () {
-            CMS.render(window.location.hash);
+            CMS.render(window.location.href);
         });
   },
 
